@@ -2,11 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 body {
   line-height: 1.6;
+  background: #f5f7fb;
+  color: #333;
 }
 
 /* Navbar */
@@ -14,9 +16,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
+  padding: 16px 60px;
   background: #0a7cff;
   color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
 }
 
 .nav-links {
@@ -25,52 +33,80 @@ body {
 }
 
 .nav-links li {
-  margin-left: 20px;
+  margin-left: 25px;
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
 }
 
 /* Hero */
 .hero {
   text-align: center;
-  padding: 80px 20px;
-  background: #f4f6f8;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #0a7cff, #4facfe);
+  color: white;
 }
 
 .hero h2 {
-  font-size: 2.2rem;
-  margin-bottom: 15px;
+  font-size: 2.6rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.1rem;
 }
 
 .hero button {
-  margin-top: 20px;
-  padding: 10px 25px;
-  background: #0a7cff;
-  color: white;
+  margin-top: 30px;
+  padding: 12px 35px;
+  background: white;
+  color: #0a7cff;
   border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
+}
+
+.hero button:hover {
+  background: #e6e6e6;
 }
 
 /* Features */
 .features {
   display: flex;
   justify-content: space-around;
-  padding: 60px 20px;
+  padding: 80px 40px;
+  background: white;
 }
 
 .feature {
   width: 30%;
   text-align: center;
+  padding: 30px;
+  border-radius: 10px;
+  background: #f9fafc;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.feature h3 {
+  margin-bottom: 15px;
+  color: #0a7cff;
 }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: 20px;
+  padding: 25px;
   background: #222;
-  color: white;
+  color: #ccc;
 }
