@@ -176,3 +176,32 @@ footer {
     display: flex;
   }
 }
+
+.contact {
+  padding: 80px 40px;
+  background: #f5f7fb;
+  text-align: center;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  max-width: 500px;
+  margin: 10px 0;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.contact button {
+  padding: 12px 30px;
+  background: #0a7cff;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.contact button:hover {
+  background: #0680e0;
+}
