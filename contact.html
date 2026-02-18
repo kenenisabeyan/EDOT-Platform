@@ -1,22 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | EDOT Platform</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
+
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">EDOT</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <section class="contact">
     <div class="container">
       <h2>Contact Us</h2>
+      <p>
+        Have questions or need more information about EDOT?
+        We are here to help students, parents, and tutors.
+      </p>
+
       <form id="contact-form">
-        <input type="text" id="name" placeholder="Your Name" required />
-        <input type="email" id="email" placeholder="Your Email" required />
-        <textarea id="message" placeholder="Your Message" required></textarea>
+        <input type="text" id="name" placeholder="Your Full Name" required />
+        <input type="email" id="email" placeholder="Your Email Address" required />
+        <textarea id="message" placeholder="Write your message here..." required></textarea>
         <button type="submit">Send Message</button>
       </form>
     </div>
   </section>
 
+  <footer>
+    <p>© 2026 EDOT Platform. All rights reserved.</p>
+  </footer>
+
 </body>
+
 </html>
