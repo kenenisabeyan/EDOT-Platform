@@ -1,12 +1,12 @@
 /* ===============================
-EDOT PLATFORM – MAIN STYLES
-Based on Quill Design System
+EDOT PLATFORM – MATCHED STYLES
+Quill-inspired, HTML-aligned
 =============================== */
 
-/* ========= GLOBAL VARIABLES ========= */
+/* ========= VARIABLES ========= */
 :root {
-  /* FONT SIZES */
-  --text-sm: 1.2rem;
+  --font-family: "Poppins", sans-serif;
+
   --text-base: 1.6rem;
   --text-paragraph: 2rem;
   --text-h5: 2.4rem;
@@ -15,24 +15,10 @@ Based on Quill Design System
   --text-h2: 4.8rem;
   --text-h1: 6.2rem;
 
-  /* FONT WEIGHT */
-  --font-normal: 400;
-  --font-bold: 700;
-
-  /* LINE HEIGHT */
-  --lh-tight: 1.2;
-  --lh-normal: 1.5;
-
-  /* FONT */
-  --font-family: "Poppins", sans-serif;
-
-  /* COLORS */
   --primary: #339af0;
-  --primary-light: #d0ebff;
   --primary-dark: #1c7ed6;
 
   --secondary: #9775fa;
-  --secondary-light: #e5dbff;
   --secondary-dark: #7048e8;
 
   --accent: #ff922b;
@@ -42,7 +28,6 @@ Based on Quill Design System
   --grey-light: #f1f3f5;
 
   --white: #ffffff;
-  --black: #000000;
 
   --nav-height: 100px;
 }
@@ -54,7 +39,6 @@ Based on Quill Design System
   box-sizing: border-box;
 }
 
-/* ========= BASE ========= */
 html {
   font-size: 62.5%;
 }
@@ -62,10 +46,15 @@ html {
 body {
   font-family: var(--font-family);
   font-size: var(--text-base);
-  line-height: var(--lh-normal);
   color: var(--grey);
+  line-height: 1.5;
 }
 
+ul {
+  list-style: none;
+}
+
+/* ========= CONTAINER ========= */
 .container {
   max-width: 1200px;
   width: 90%;
@@ -75,12 +64,9 @@ body {
 /* ========= TYPOGRAPHY ========= */
 h1,
 h2,
-h3,
-h4,
-h5 {
-  font-weight: var(--font-bold);
-  line-height: var(--lh-tight);
+h3 {
   color: var(--grey-dark);
+  line-height: 1.2;
 }
 
 h1 {
@@ -93,14 +79,6 @@ h2 {
 
 h3 {
   font-size: var(--text-h3);
-}
-
-h4 {
-  font-size: var(--text-h4);
-}
-
-h5 {
-  font-size: var(--text-h5);
 }
 
 p {
@@ -117,8 +95,8 @@ a {
   padding: 1.5rem 3rem;
   border-radius: 8px;
   font-size: var(--text-base);
-  transition: 0.3s;
   display: inline-block;
+  transition: 0.3s;
 }
 
 .btn-primary {
@@ -130,14 +108,24 @@ a {
   background: var(--primary-dark);
 }
 
-.btn-outline {
+.btn-primary-outline {
   border: 2px solid var(--primary);
   color: var(--primary);
+  background: transparent;
 }
 
-.btn-outline:hover {
+.btn-primary-outline:hover {
   background: var(--primary);
   color: var(--white);
+}
+
+.btn-secondary {
+  background: var(--secondary);
+  color: var(--white);
+}
+
+.btn-secondary:hover {
+  background: var(--secondary-dark);
 }
 
 /* ========= NAVBAR ========= */
@@ -156,86 +144,20 @@ a {
 /* ========= HERO ========= */
 .hero-section {
   height: calc(100vh - var(--nav-height));
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.hero-heading {
-  margin-bottom: 2rem;
-}
-
-.hero-paragraph {
-  margin-bottom: 4rem;
+  gap: 3rem;
 }
 
 .hero-btn-container {
   display: flex;
+  justify-content: center;
   gap: 2rem;
 }
 
-/* ========= FEATURES ========= */
-.features-section {
-  margin-bottom: 30rem;
-}
-
-.features-main-heading {
-  text-align: center;
-  margin-bottom: 8rem;
-}
-
-.features-grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10rem 5rem;
-  align-items: center;
-}
-
-.feature-img {
-  width: 100%;
-  max-width: 400px;
-}
-
-/* ========= CTA ========= */
-.cta-section {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 30rem;
-}
-
-.cta-card {
-  background: var(--primary);
-  color: var(--white);
-  padding: 10rem 20rem;
-  border-radius: 20px;
-  text-align: center;
-}
-
-/* ========= FOOTER ========= */
-.footer {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.footer-links-container,
-.social-icons-container {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-}
-
-
-
-
-
-
-
-/* HERE ARE DELETE LATER */
-
+/* ========= HIGHLIGHTS ========= */
 .highlight {
   padding: 0.5rem 1rem;
   border-radius: 4px;
@@ -250,21 +172,64 @@ a {
   background: var(--accent);
 }
 
-.beta {
-  position: relative;
+/* ========= FEATURES ========= */
+.features-section {
+  margin: 20rem 0;
 }
 
-.beta::after {
-  content: "beta";
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 1.2rem;
-  background: var(--accent);
+.features-main-heading {
+  text-align: center;
+  margin-bottom: 8rem;
+}
+
+.features-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10rem 5rem;
+  align-items: center;
+}
+
+.feature-headings {
+  margin-bottom: 1.6rem;
+}
+
+.feature-img {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* ========= CTA ========= */
+.cta-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20rem;
+}
+
+.cta-card {
+  background: var(--primary);
   color: var(--white);
-  padding: 0.3rem 0.8rem;
-  border-radius: 4px;
-  transform: translate(60%, -60%);
+  padding: 8rem 16rem;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.cta-heading {
+  margin-bottom: 3rem;
+}
+
+/* ========= FOOTER ========= */
+.footer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.footer-links-container,
+.social-icons-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .small-text {
@@ -275,6 +240,7 @@ a {
   color: var(--secondary);
 }
 
+/* ========= LOGO ========= */
 .logo-md {
   width: 100px;
 }
@@ -283,13 +249,32 @@ a {
   width: 80px;
 }
 
+/* ========= BETA BADGE ========= */
+.beta {
+  position: relative;
+}
+
+.beta::after {
+  content: "beta";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 1.2rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  transform: translate(60%, -60%);
+}
+
+/* ========= CHAT ========= */
 .chat-container {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
   width: 7rem;
   height: 7rem;
-  background: var(--primary-light);
+  background: var(--grey-light);
   border-radius: 50%;
   display: flex;
   justify-content: center;
