@@ -2,66 +2,128 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EDOT Platform | Education Digital Online Tutorials</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDOT Platform</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="queries.css">
 </head>
 
 <body>
+  <div class="container">
+    <header>
+      <!-- NAVIGATION -->
+      <nav class="navbar">
+        <a class="beta" href="index.html">
+          <img class="logo-md" src="images/edot-logo.svg" alt="EDOT Platform logo">
+        </a>
 
-  <header>
-    <nav class="navbar">
-      <h1 class="logo">EDOT</h1>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="courses.html">Courses</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <ul class="nav-btn-container">
+          <li><a class="btn btn-primary-outline" href="login.html">Login</a></li>
+          <li><a class="btn btn-primary" href="register.html">Register</a></li>
+        </ul>
+      </nav>
+
+      <!-- HERO SECTION -->
+      <section class="hero-section">
+        <h1 class="hero-heading">
+          <span class="highlight highlight-secondary">Quality education</span><br>
+          for every student, everywhere 🎓
+        </h1>
+
+        <p class="hero-paragragh">
+          EDOT (Education Digital Online Tutorials) is a modern learning platform
+          that connects students with quality lessons, tutors, and digital resources.
+        </p>
+
+        <ul class="hero-btn-container">
+          <li><a class="btn btn-primary" href="register.html">Start learning</a></li>
+          <li><a class="btn btn-primary-outline" href="#features">Explore features</a></li>
+        </ul>
+      </section>
+    </header>
+
+    <main>
+      <!-- FEATURE SECTION -->
+      <section class="features-section" id="features">
+        <h2 class="features-main-heading">
+          A <span class="highlight highlight-tertiary">simple, effective</span> way to learn and grow
+        </h2>
+
+        <div class="features-grid-container">
+          <div>
+            <h3 class="feature-headings">Learn anytime, anywhere</h3>
+            <p>
+              Access educational content online from any location.
+              Learn at your own pace with structured lessons and guidance.
+            </p>
+          </div>
+
+          <img class="feature-img" src="images/features-1.png" alt="online learning">
+
+          <img class="feature-img" src="images/features-2.png" alt="digital education platform">
+
+          <div>
+            <h3 class="feature-headings">Well-structured courses</h3>
+            <p>
+              Courses are organized by grade and subject, making learning
+              simple, clear, and effective for students.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="feature-headings">Online & in-person tutoring</h3>
+            <p>
+              EDOT combines digital learning with optional in-person tutoring
+              to support students who need extra help.
+            </p>
+          </div>
+
+          <img class="feature-img" src="images/features-3.png" alt="tutoring support">
+        </div>
+      </section>
+
+      <!-- CTA SECTION -->
+      <section class="cta-section">
+        <div class="cta-card">
+          <h2 class="cta-heading">Join EDOT today</h2>
+          <a class="btn btn-secondary" href="register.html">Create free account</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <img class="logo-sm" src="images/edot-logo.svg" alt="EDOT logo">
+
+      <ul class="social-icons-container">
+        <li><a href="#"><img class="social-icons" src="images/facebook.svg" alt="Facebook"></a></li>
+        <li><a href="#"><img class="social-icons" src="images/telegram.svg" alt="Telegram"></a></li>
+        <li><a href="#"><img class="social-icons" src="images/youtube.svg" alt="YouTube"></a></li>
       </ul>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <h2>Building Strong Foundations for Future Success</h2>
-    <p>
-      EDOT (Education Digital Online Tutorials) is a modern learning platform
-      dedicated to helping primary and secondary school students achieve academic
-      excellence through accessible and effective education.
-    </p>
-    <button>Begin Your Learning Journey</button>
-  </section>
+      <ul class="footer-links-container">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
 
-  <section class="features">
-    <div class="feature">
-      <h3>Flexible Online Learning</h3>
-      <p>
-        Access high-quality educational content anytime and anywhere,
-        designed to support students at every learning stage.
+      <p class="small-text">
+        Made with <span class="heart-icon">♥︎</span> for students
       </p>
-    </div>
+    </footer>
+  </div>
 
-    <div class="feature">
-      <h3>Experienced Tutors</h3>
-      <p>
-        Learn from skilled tutors who provide clear explanations,
-        guidance, and continuous academic support.
-      </p>
-    </div>
+  <div class="chat-container">
+    <img class="chat-icon" src="images/chat.svg" alt="chat support">
+  </div>
 
-    <div class="feature">
-      <h3>Personalized Support</h3>
-      <p>
-        Combine online tutorials with in-person tutoring
-        for deeper understanding and improved performance.
-      </p>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2026 EDOT Platform. All rights reserved.</p>
-  </footer>
-
+  <script src="script.js"></script>
 </body>
 
 </html>
