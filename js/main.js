@@ -1,40 +1,66 @@
-// Hamburger toggle
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("nav-links");
+"use strict";
 
-hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
+/* =========================
+   STICKY NAVBAR
+========================= */
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 60) {
+    navbar.classList.add("sticky");
+  } else {
+    navbar.classList.remove("sticky");
+  }
 });
 
-// Hero Button Click
-const heroButton = document.querySelector(".hero button");
+/* =========================
+   SMOOTH SCROLL
+========================= */
+const exploreBtn = document.querySelector('a[href="#features"]');
 
-heroButton.addEventListener("click", () => {
-  alert("Welcome to EDOT Platform! Start exploring our courses.");
-});
-
-// Smooth scroll for hero button
-heroButton.addEventListener("click", () => {
-  document.getElementById("courses").scrollIntoView({ behavior: "smooth" });
-});
-
-// Contact form validation
-const form = document.getElementById("contact-form");
-
-if (form) {
-  form.addEventListener("submit", (e) => {
+if (exploreBtn) {
+  exploreBtn.addEventListener("click", function (e) {
     e.preventDefault();
-
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
-
-    if (!name || !email || !message) {
-      alert("Please fill in all fields!");
-      return;
-    }
-
-    alert("Thank you for contacting EDOT! We will reply soon.");
-    form.reset();
+    document.querySelector("#features").scrollIntoView({
+      behavior: "smooth",
+    });
   });
 }
+
+/* =========================
+   CTA BUTTON FEEDBACK
+========================= */
+const ctaBtn = document.querySelector(".cta-card .btn");
+
+if (ctaBtn) {
+  ctaBtn.addEventListener("mouseenter", () => {
+    ctaBtn.style.transform = "scale(1.05)";
+  });
+
+  ctaBtn.addEventListener("mouseleave", () => {
+    ctaBtn.style.transform = "scale(1)";
+  });
+}
+
+/* =========================
+   CHAT ICON (FUTURE READY)
+========================= */
+const chatIcon = document.querySelector(".chat-container");
+
+if (chatIcon) {
+  chatIcon.addEventListener("click", () => {
+    alert("💬 EDOT Support: Chat feature coming soon!");
+  });
+}
+
+/* =========================
+   BUTTON CLICK RIPPLE (UX)
+========================= */
+const buttons = document.querySelectorAll(".btn");
+
+buttons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    btn.classList.add("clicked");
+    setTimeout(() => btn.classList.remove("clicked"), 200);
+  });
+});
