@@ -1,66 +1,66 @@
 "use strict";
 
 /* =========================
-   STICKY NAVBAR
+   LOGIN FORM
 ========================= */
-const navbar = document.querySelector(".navbar");
+const loginForm = document.querySelector("#login-form");
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 60) {
-    navbar.classList.add("sticky");
-  } else {
-    navbar.classList.remove("sticky");
-  }
-});
-
-/* =========================
-   SMOOTH SCROLL
-========================= */
-const exploreBtn = document.querySelector('a[href="#features"]');
-
-if (exploreBtn) {
-  exploreBtn.addEventListener("click", function (e) {
+if (loginForm) {
+  loginForm.addEventListener("submit", function (e) {
     e.preventDefault();
-    document.querySelector("#features").scrollIntoView({
-      behavior: "smooth",
-    });
+
+    const email = document.querySelector("#login-email").value.trim();
+    const password = document.querySelector("#login-password").value.trim();
+
+    if (!email || !password) {
+      alert("Please fill in all fields");
+      return;
+    }
+
+    if (!email.includes("@")) {
+      alert("Invalid email address");
+      return;
+    }
+
+    if (password.length < 6) {
+      alert("Password must be at least 6 characters");
+      return;
+    }
+
+    alert("Login successful (demo)");
+    this.reset();
   });
 }
 
 /* =========================
-   CTA BUTTON FEEDBACK
+   REGISTER FORM
 ========================= */
-const ctaBtn = document.querySelector(".cta-card .btn");
+const registerForm = document.querySelector("#register-form");
 
-if (ctaBtn) {
-  ctaBtn.addEventListener("mouseenter", () => {
-    ctaBtn.style.transform = "scale(1.05)";
-  });
+if (registerForm) {
+  registerForm.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  ctaBtn.addEventListener("mouseleave", () => {
-    ctaBtn.style.transform = "scale(1)";
+    const name = document.querySelector("#register-name").value.trim();
+    const email = document.querySelector("#register-email").value.trim();
+    const password = document.querySelector("#register-password").value.trim();
+
+    if (!name || !email || !password) {
+      alert("All fields are required");
+      return;
+    }
+
+    if (!email.includes("@")) {
+      alert("Invalid email address");
+      return;
+    }
+
+    if (password.length < 6) {
+      alert("Password must be at least 6 characters");
+      return;
+    }
+
+    alert("Account created successfully (demo)");
+    this.reset();
   });
 }
-
-/* =========================
-   CHAT ICON (FUTURE READY)
-========================= */
-const chatIcon = document.querySelector(".chat-container");
-
-if (chatIcon) {
-  chatIcon.addEventListener("click", () => {
-    alert("💬 EDOT Support: Chat feature coming soon!");
-  });
-}
-
-/* =========================
-   BUTTON CLICK RIPPLE (UX)
-========================= */
-const buttons = document.querySelectorAll(".btn");
-
-buttons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    btn.classList.add("clicked");
-    setTimeout(() => btn.classList.remove("clicked"), 200);
-  });
-});
