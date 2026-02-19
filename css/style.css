@@ -1,263 +1,83 @@
 /* ===============================
-EDOT PLATFORM – MAIN STYLES
-MATCHED WITH PROVIDED HTML
+   AUTH PAGES (LOGIN & REGISTER)
 =============================== */
 
-/* ========= VARIABLES ========= */
-:root {
-  --primary: #339af0;
-  --primary-dark: #1c7ed6;
-  --primary-light: #d0ebff;
-
-  --secondary: #9775fa;
-  --accent: #ff922b;
-
-  --grey-dark: #212529;
-  --grey: #495057;
-  --grey-light: #f1f3f5;
-
-  --white: #ffffff;
-
-  --font-main: "Poppins", sans-serif;
-}
-
-/* ========= RESET ========= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* ========= BASE ========= */
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-family: var(--font-main);
-  font-size: 1.6rem;
-  color: var(--grey);
-  line-height: 1.6;
-}
-
-.container {
-  max-width: 120rem;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-/* ========= NAVBAR ========= */
-.navbar {
-  height: 10rem;
+.auth-section {
+  min-height: 100vh;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-btn-container {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-}
-
-/* ========= LOGOS ========= */
-.logo-md {
-  width: 10rem;
-}
-
-.logo-sm {
-  width: 8rem;
-}
-
-/* ========= BUTTONS ========= */
-.btn {
-  display: inline-block;
-  padding: 1.4rem 3rem;
-  border-radius: 0.8rem;
-  font-size: 1.6rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.3s;
-}
-
-.btn-primary {
-  background: var(--primary);
-  color: var(--white);
-}
-
-.btn-primary:hover {
-  background: var(--primary-dark);
-}
-
-.btn-primary-outline {
-  border: 2px solid var(--primary);
-  color: var(--primary);
-}
-
-.btn-primary-outline:hover {
-  background: var(--primary);
-  color: var(--white);
-}
-
-.btn-secondary {
-  background: var(--secondary);
-  color: var(--white);
-}
-
-/* ========= HERO ========= */
-.hero-section {
-  height: calc(100vh - 10rem);
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  background: var(--grey-light);
+  padding: 4rem 2rem;
 }
 
-.hero-heading {
-  font-size: 6rem;
-  font-weight: 700;
-  color: var(--grey-dark);
-  margin-bottom: 2rem;
-}
-
-.hero-paragragh {
-  font-size: 2rem;
-  max-width: 70rem;
-  margin-bottom: 4rem;
-}
-
-.hero-btn-container {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-}
-
-/* ========= HIGHLIGHTS ========= */
-.highlight {
-  padding: 0.4rem 1rem;
-  border-radius: 0.4rem;
-  color: var(--white);
-}
-
-.highlight-secondary {
-  background: var(--secondary);
-}
-
-.highlight-tertiary {
-  background: var(--accent);
-}
-
-/* ========= FEATURES ========= */
-.features-section {
-  margin-bottom: 30rem;
-}
-
-.features-main-heading {
-  text-align: center;
-  font-size: 4.8rem;
-  margin-bottom: 8rem;
-  color: var(--grey-dark);
-}
-
-.features-grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8rem 5rem;
-  align-items: center;
-}
-
-.feature-headings {
-  font-size: 3rem;
-  color: var(--grey-dark);
-  margin-bottom: 1.5rem;
-}
-
-.feature-img {
+.auth-card {
+  background: var(--white);
   width: 100%;
-  max-width: 40rem;
-  justify-self: center;
+  max-width: 42rem;
+  padding: 4rem;
+  border-radius: 1.6rem;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.08);
 }
 
-/* ========= CTA ========= */
-.cta-section {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 30rem;
-}
-
-.cta-card {
-  background: var(--primary);
-  padding: 8rem 16rem;
-  border-radius: 2rem;
+.auth-heading {
+  font-size: 3.2rem;
+  color: var(--grey-dark);
   text-align: center;
-}
-
-.cta-heading {
-  font-size: 4rem;
-  color: var(--white);
   margin-bottom: 3rem;
 }
 
-/* ========= FOOTER ========= */
-.footer {
-  text-align: center;
-  padding-bottom: 6rem;
-}
-
-.footer-links-container,
-.social-icons-container {
-  list-style: none;
+/* ===== FORM ===== */
+.auth-form {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   gap: 2rem;
-  margin: 2rem 0;
 }
 
-.social-icons {
-  width: 2.4rem;
-}
-
-.small-text {
-  font-size: 1.2rem;
-}
-
-.heart-icon {
-  color: var(--secondary);
-}
-
-/* ========= CHAT ========= */
-.chat-container {
-  position: fixed;
-  right: 2rem;
-  bottom: 2rem;
-  width: 7rem;
-  height: 7rem;
-  background: var(--primary-light);
-  border-radius: 50%;
+.form-group {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  gap: 0.8rem;
 }
 
-.chat-icon {
-  width: 4rem;
+.form-group label {
+  font-size: 1.4rem;
+  color: var(--grey-dark);
 }
 
-/* ========= BETA BADGE ========= */
-.beta {
-  position: relative;
+.form-group input {
+  padding: 1.4rem 1.6rem;
+  font-size: 1.6rem;
+  border-radius: 0.8rem;
+  border: 1px solid #dee2e6;
+  font-family: inherit;
 }
 
-.beta::after {
-  content: "beta";
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: translate(60%, -60%);
-  background: var(--accent);
-  color: var(--white);
-  font-size: 1.2rem;
-  padding: 0.3rem 0.8rem;
-  border-radius: 0.4rem;
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* ===== AUTH BUTTON ===== */
+.auth-btn {
+  margin-top: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+/* ===== EXTRA LINKS ===== */
+.auth-text {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.auth-text a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-text a:hover {
+  text-decoration: underline;
 }

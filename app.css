@@ -261,3 +261,89 @@ body {
   padding: 0.3rem 0.8rem;
   border-radius: 0.4rem;
 }
+
+
+
+/* ===============================
+   AUTH PAGES (LOGIN & REGISTER)
+=============================== */
+
+.auth-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--grey-light);
+  padding: 4rem 2rem;
+}
+
+.auth-card {
+  background: var(--white);
+  width: 100%;
+  max-width: 42rem;
+  padding: 4rem;
+  border-radius: 1.6rem;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.08);
+}
+
+.auth-heading {
+  font-size: 3.2rem;
+  color: var(--grey-dark);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* ===== FORM ===== */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.form-group label {
+  font-size: 1.4rem;
+  color: var(--grey-dark);
+}
+
+.form-group input {
+  padding: 1.4rem 1.6rem;
+  font-size: 1.6rem;
+  border-radius: 0.8rem;
+  border: 1px solid #dee2e6;
+  font-family: inherit;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* ===== AUTH BUTTON ===== */
+.auth-btn {
+  margin-top: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+/* ===== EXTRA LINKS ===== */
+.auth-text {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.auth-text a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-text a:hover {
+  text-decoration: underline;
+}
