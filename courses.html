@@ -5,53 +5,81 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Courses | EDOT Platform</title>
-  <link rel="stylesheet" href="app.css" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="app.css" />
 </head>
 
 <body>
 
+  <!-- NAVBAR -->
   <header>
-    <nav class="navbar">
-      <h1 class="logo">EDOT</h1>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="courses.html">Courses</a></li>
-        <li><a href="contact.html">Contact</a></li>
+    <nav class="navbar container">
+      <a href="index.html">
+        <img class="logo-md" src="assets/images/edot-logos.png" alt="EDOT Logo">
+      </a>
+
+      <ul class="nav-btn-container">
+        <li><a class="btn btn-primary-outline" href="index.html">Home</a></li>
+        <li><a class="btn btn-primary-outline" href="courses.html">Courses</a></li>
+        <li><a class="btn btn-primary-outline" href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="courses">
-    <div class="container">
-      <h2>Our Courses</h2>
-      <p>
-        EDOT provides carefully designed courses aligned with
-        primary and secondary school curricula.
-      </p>
+  <!-- COURSES SECTION -->
+  <main class="container">
+    <section class="features-section">
+      <h2 class="features-main-heading">
+        Our <span class="highlight highlight-tertiary">Courses</span>
+      </h2>
 
-      <ul>
-        <li>Mathematics – Building problem-solving and logical thinking skills</li>
-        <li>Science – Understanding concepts through clear explanations</li>
-        <li>English – Improving reading, writing, and communication skills</li>
-        <li>Social Studies – Developing knowledge of society and history</li>
-      </ul>
+      <div class="features-grid-container">
 
-      <p>
-        Each course is structured to support students step by step,
-        from basic concepts to advanced understanding.
-      </p>
-    </div>
-  </section>
+        <div>
+          <h3 class="feature-headings">Mathematics</h3>
+          <p>
+            Build strong problem-solving skills, logical thinking,
+            and confidence with step-by-step lessons.
+          </p>
+        </div>
 
-  <footer>
-    <p>© 2026 EDOT Platform. All rights reserved.</p>
+        <div>
+          <h3 class="feature-headings">Science</h3>
+          <p>
+            Learn science concepts clearly through explanations,
+            examples, and real-life applications.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="feature-headings">English</h3>
+          <p>
+            Improve reading, writing, listening, and communication
+            skills for academic and real-world success.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="feature-headings">Social Studies</h3>
+          <p>
+            Understand society, history, geography, and citizenship
+            with structured and engaging content.
+          </p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="small-text">© 2026 EDOT Platform. All rights reserved.</p>
   </footer>
 
-  <script src="js/script.js"></script>
 </body>
 
 </html>
