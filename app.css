@@ -456,6 +456,27 @@ body {
   left: 420px;
 }
 
+.hex-icon {
+  font-size: 3.2rem;
+  color: #2563eb;
+  margin-bottom: 1rem;
+}
+
+.center-icon {
+  font-size: 4rem;
+  color: white;
+}
+
+/* Hover effect (professional feel) */
+.hex:hover {
+  transform: translateY(-8px);
+  transition: 0.3s ease;
+}
+
+.hex:hover .hex-icon {
+  color: #1d4ed8;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .hex-container {
@@ -470,5 +491,6 @@ body {
     position: static;
     clip-path: none;
     border-radius: 12px;
+    border-block-color: var(--accent);
   }
 }
