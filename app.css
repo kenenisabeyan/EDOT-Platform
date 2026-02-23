@@ -501,11 +501,9 @@ ICON ANIMATIONS
   0% {
     transform: scale(1);
   }
-
   50% {
     transform: scale(1.05);
   }
-
   100% {
     transform: scale(1);
   }
@@ -538,5 +536,141 @@ ICON ANIMATIONS
     clip-path: none;
     border-radius: 12px;
     border-block-color: var(--accent);
+  }
+}
+
+/* ===============================
+EDOT COURSES (1–9) – ALL IN ONE
+=============================== */
+
+.edot-courses {
+  padding: 6rem 2rem;
+  background: #f8fafc;
+}
+
+.edot-courses h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.edot-courses p {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+  font-size: 1.5rem;
+  color: #475569;
+}
+
+/* Course grid */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+}
+
+/* Course card (used for all 9) */
+.course-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Icon */
+.course-card .icon {
+  font-size: 3.8rem;
+  margin-bottom: 1.2rem;
+  color: #2563eb;
+}
+
+/* Title */
+.course-card h3 {
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
+  color: #0f172a;
+}
+
+/* Description */
+.course-card p {
+  font-size: 1.4rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Button */
+.course-card button {
+  margin-top: 1.6rem;
+  padding: 0.7rem 1.8rem;
+  border: none;
+  border-radius: 2rem;
+  background: #2563eb;
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.course-card button:hover {
+  background: #1d4ed8;
+  transform: translateY(-3px);
+}
+
+/* ===============================
+OPTIONAL: COURSE COLOR VARIATION
+(Still ONE system for all 9)
+=============================== */
+
+.math .icon {
+  color: #2563eb;
+}
+
+.english .icon {
+  color: #16a34a;
+}
+
+.physics .icon {
+  color: #9333ea;
+}
+
+.chemistry .icon {
+  color: #dc2626;
+}
+
+.biology .icon {
+  color: #15803d;
+}
+
+.aptitude .icon {
+  color: #ca8a04;
+}
+
+.social .icon {
+  color: #0284c7;
+}
+
+.programming .icon {
+  color: #0f172a;
+}
+
+.support .icon {
+  color: #7c3aed;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .edot-courses h2 {
+    font-size: 2.4rem;
+  }
+
+  .course-card {
+    padding: 2rem;
   }
 }
