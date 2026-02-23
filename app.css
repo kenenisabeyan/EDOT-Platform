@@ -477,6 +477,52 @@ body {
   color: #1d4ed8;
 }
 
+
+/* ===============================
+ICON ANIMATIONS
+=============================== */
+
+/* Base icon animation */
+.hex-icon {
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+  color: #2563eb;
+  transition: transform 0.4s ease, color 0.4s ease;
+}
+
+/* Hover: lift + rotate slightly */
+.hex:hover .hex-icon {
+  transform: scale(1.15) rotate(6deg);
+  color: #1d4ed8;
+}
+
+/* Continuous soft pulse */
+@keyframes softPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Apply pulse only to course icons */
+.hex:not(.center-hex) .hex-icon {
+  animation: softPulse 3s infinite ease-in-out;
+}
+
+/* Center EDOT icon stronger */
+.center-icon {
+  font-size: 4rem;
+  color: white;
+  animation: softPulse 2s infinite ease-in-out;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .hex-container {
