@@ -347,3 +347,128 @@ body {
 .auth-text a:hover {
   text-decoration: underline;
 }
+
+
+
+/* courses */
+
+.course-map {
+  padding: 6rem 2rem;
+  background: #f8fafc;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 3rem;
+  margin-bottom: 4rem;
+}
+
+.hex-container {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin: auto;
+}
+
+.hex {
+  width: 160px;
+  height: 160px;
+  background: white;
+  clip-path: polygon(25% 6%, 75% 6%,
+      100% 50%,
+      75% 94%, 25% 94%,
+      0% 50%);
+  position: absolute;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.hex h4,
+.hex h3 {
+  margin-bottom: .5rem;
+}
+
+.hex p {
+  font-size: 1.3rem;
+}
+
+.hex button {
+  margin-top: .8rem;
+  padding: .6rem 1.2rem;
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Center */
+.center-hex {
+  top: 220px;
+  left: 220px;
+  background: #2563eb;
+  color: white;
+}
+
+.center-hex button {
+  background: white;
+  color: #2563eb;
+}
+
+/* Positions */
+.math {
+  top: 20px;
+  left: 220px;
+}
+
+.english {
+  top: 120px;
+  left: 420px;
+}
+
+.physics {
+  top: 320px;
+  left: 420px;
+}
+
+.chemistry {
+  top: 420px;
+  left: 220px;
+}
+
+.biology {
+  top: 320px;
+  left: 20px;
+}
+
+.programming {
+  top: 120px;
+  left: 20px;
+}
+
+.aptitude {
+  top: 0;
+  left: 20px;
+}
+
+.social {
+  top: 0;
+  left: 420px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hex-container {
+    width: auto;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+  }
+
+  .hex {
+    position: static;
+    clip-path: none;
+    border-radius: 12px;
+  }
+}
