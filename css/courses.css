@@ -1,0 +1,269 @@
+/* ===============================
+EDOT COURSES PAGE – courses.css
+MATCHED 100% WITH PROVIDED HTML
+=============================== */
+
+/* ===== ROOT ===== */
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --bg-light: #f8fafc;
+  --text-dark: #0f172a;
+  --text-muted: #475569;
+  --white: #ffffff;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  --radius: 16px;
+  --font-main: "Poppins", sans-serif;
+}
+
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--bg-light);
+  color: var(--text-dark);
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 2rem;
+}
+
+/* ===============================
+NAVBAR
+=============================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 9rem;
+}
+
+.logo-md {
+  width: 9rem;
+}
+
+.nav-btn-container {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 2rem;
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary-outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-primary-outline:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* ===============================
+COURSE MAP SECTION
+=============================== */
+.course-map {
+  padding: 6rem 0 10rem;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 3.2rem;
+  margin-bottom: 5rem;
+}
+
+/* ===== HEX CONTAINER ===== */
+.hex-container {
+  position: relative;
+  width: 620px;
+  height: 620px;
+  margin: auto;
+}
+
+/* ===== HEX CARD ===== */
+.hex {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: var(--white);
+  clip-path: polygon(25% 6%,
+      75% 6%,
+      100% 50%,
+      75% 94%,
+      25% 94%,
+      0% 50%);
+  padding: 2rem 1.5rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: transform 0.3s ease;
+}
+
+.hex:hover {
+  transform: translateY(-8px);
+}
+
+/* ===== ICONS ===== */
+.hex-icon {
+  font-size: 3.4rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.8rem;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.center-icon {
+  font-size: 4rem;
+  color: var(--white);
+}
+
+/* ===== TEXT ===== */
+.hex h3,
+.hex h4 {
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+
+.hex p {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+/* ===== BUTTON ===== */
+.hex button {
+  margin-top: auto;
+  margin-bottom: 0.6rem;
+  padding: 0.5rem 1.6rem;
+  border: none;
+  border-radius: 2rem;
+  background: var(--primary);
+  color: var(--white);
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.hex button:hover {
+  background: var(--primary-dark);
+}
+
+/* ===============================
+CENTER HEX (EDOT)
+=============================== */
+.center-hex {
+  width: 190px;
+  height: 190px;
+  padding-top: 2.4rem;
+  top: 230px;
+  left: 230px;
+  background: var(--primary);
+  color: var(--white);
+}
+
+.center-hex p {
+  color: #e0e7ff;
+}
+
+.center-hex button {
+  background: var(--white);
+  color: var(--primary);
+}
+
+/* ===============================
+HEX POSITIONS
+=============================== */
+.math {
+  top: 40px;
+  left: 260px;
+}
+
+.english {
+  top: 160px;
+  left: 500px;
+}
+
+.physics {
+  top: 380px;
+  left: 500px;
+}
+
+.chemistry {
+  top: 520px;
+  left: 260px;
+}
+
+.biology {
+  top: 380px;
+  left: 20px;
+}
+
+.programming {
+  top: 160px;
+  left: 20px;
+}
+
+.aptitude {
+  top: 20px;
+  left: 20px;
+}
+
+.social {
+  top: 20px;
+  left: 500px;
+}
+
+/* ===============================
+FOOTER
+=============================== */
+.footer {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.small-text {
+  font-size: 1.3rem;
+  color: var(--text-muted);
+}
+
+/* ===============================
+RESPONSIVE (MOBILE)
+=============================== */
+@media (max-width: 768px) {
+  .hex-container {
+    width: 700px;
+    height: 700px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2.5rem;
+  }
+
+  .hex {
+    position: static;
+    clip-path: none;
+    border-radius: var(--radius);
+  }
+
+  .center-hex {
+    top: 260px;
+    left: 260px;
+  }
+}
