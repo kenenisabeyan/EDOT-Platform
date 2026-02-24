@@ -5,52 +5,94 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About EDOT | Education Digital Online Tutorials</title>
-  <link rel="stylesheet" href="app.css" />
+
+  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">g
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/about.css">
 </head>
 
 <body>
 
+  <!-- NAVBAR -->
   <header>
-    <nav class="navbar">
-      <h1 class="logo">EDOT</h1>
-      <ul class="nav-links">
+    <nav class="navbar container">
+      <a href="index.html" class="logo">EDOT</a>
+
+      <ul class="nav-btn-container">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a class="active" href="about.html">About</a></li>
         <li><a href="courses.html">Courses</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="about">
+  <!-- HERO -->
+  <section class="about-hero">
     <div class="container">
-      <h2>About EDOT Platform</h2>
+      <h1>About EDOT Platform</h1>
       <p>
-        EDOT (Education Digital Online Tutorials) was created with the goal of
-        improving the quality of education for primary and secondary school students.
-        We believe that every student deserves access to clear, supportive, and
-        engaging learning resources.
-      </p>
-      <p>
-        Our platform offers structured online tutorials combined with guided
-        in-person tutoring. This blended approach allows students to learn at
-        their own pace while receiving personal academic support.
-      </p>
-      <p>
-        EDOT focuses on building strong academic foundations, boosting confidence,
-        and preparing students for long-term educational success.
+        Education Digital Online Tutorials (EDOT) is built to make
+        quality education accessible, affordable, and effective
+        for every student.
       </p>
     </div>
   </section>
 
-  <footer>
+  <!-- ABOUT CONTENT -->
+  <section class="about-section container">
+    <h2>Who We Are</h2>
+    <p class="about-text">
+      EDOT Platform is a modern learning system designed for
+      primary and secondary school students. We combine structured
+      digital lessons with real guidance to help learners
+      understand concepts clearly and confidently.
+    </p>
+
+    <div class="about-features">
+      <div class="feature-card">
+        <i class="fas fa-graduation-cap"></i>
+        <h3>Quality Learning</h3>
+        <p>Well-structured courses aligned with school curricula.</p>
+      </div>
+
+      <div class="feature-card">
+        <i class="fas fa-globe"></i>
+        <h3>Accessible Anywhere</h3>
+        <p>Learn anytime, anywhere using digital resources.</p>
+      </div>
+
+      <div class="feature-card">
+        <i class="fas fa-code"></i>
+        <h3>Modern Skills</h3>
+        <p>Build problem-solving, logic, and digital skills.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="mission-section">
+    <div class="container">
+      <h2>Our Mission</h2>
+      <p>
+        To empower students with knowledge, confidence, and skills
+        through innovative digital education.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
     <p>© 2026 EDOT Platform. All rights reserved.</p>
   </footer>
 
-  <script src="js/script.js"></script>
 </body>
 
 </html>
