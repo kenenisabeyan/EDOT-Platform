@@ -102,7 +102,7 @@ body {
   background: white;
   padding: 30px 20px;
   border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   position: relative;
   overflow: hidden;
@@ -121,22 +121,14 @@ body {
 }
 
 @keyframes slide {
-  0% {
-    left: -100%;
-  }
-
-  50% {
-    left: 0;
-  }
-
-  100% {
-    left: 100%;
-  }
+  0% { left: -100%; }
+  50% { left: 0; }
+  100% { left: 100%; }
 }
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
 .card h3 {
