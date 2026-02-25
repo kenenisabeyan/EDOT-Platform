@@ -1,5 +1,5 @@
 /* ===============================
-   GLOBAL (FROM HOME)
+   GLOBAL RESET & BASE
 ================================ */
 * {
   margin: 0;
@@ -9,22 +9,23 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #1f2937;
   line-height: 1.6;
 }
 
 .container {
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
   padding: 0 2rem;
 }
 
 /* ===============================
-   NAVBAR (HOME STYLE)
+   NAVBAR
 ================================ */
 header {
   background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .navbar {
@@ -38,110 +39,140 @@ header {
   font-size: 2.4rem;
   font-weight: 700;
   color: #2563eb;
+  text-decoration: none;
 }
 
-.nav-links {
+.nav-btn-container {
   list-style: none;
   display: flex;
-  gap: 1.4rem;
+  gap: 1.2rem;
 }
 
-.nav-links a {
+.nav-btn-container a {
   padding: 0.6rem 1.6rem;
   border: 2px solid #2563eb;
   border-radius: 2rem;
   color: #2563eb;
   text-decoration: none;
   font-weight: 500;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.nav-links a:hover {
+.nav-btn-container a:hover,
+.nav-btn-container a.active {
   background: #2563eb;
   color: #ffffff;
 }
 
 /* ===============================
-   ABOUT HERO (INTEGRATED)
+   HERO SECTION
 ================================ */
 .about-hero {
-  padding: 6rem 0 4rem;
+  background: linear-gradient(135deg, #f8fafc, #eef2ff);
+  padding: 7rem 0 5rem;
   text-align: center;
-  background: #f8fafc;
 }
 
 .about-hero h1 {
-  font-size: 3.6rem;
-  margin-bottom: 1rem;
+  font-size: 3.8rem;
+  margin-bottom: 1.2rem;
 }
 
 .about-hero p {
   font-size: 1.6rem;
   color: #4b5563;
-  max-width: 700px;
+  max-width: 750px;
   margin: auto;
 }
 
 /* ===============================
-   ABOUT CONTENT (YOUR STRUCTURE)
+   ABOUT SECTION
 ================================ */
-.about-content {
-  padding: 5rem 0;
+.about-section {
+  padding: 6rem 0;
   text-align: center;
 }
 
-.about-content h2 {
+.about-section h2 {
   font-size: 3rem;
   margin-bottom: 1.2rem;
 }
 
-.about-content p {
+.about-text {
   font-size: 1.5rem;
-  max-width: 750px;
-  margin: auto;
+  max-width: 800px;
+  margin: 0 auto 4rem;
   color: #4b5563;
 }
 
 /* ===============================
-   ABOUT FEATURES (HOME CARD STYLE)
+   FEATURE CARDS
 ================================ */
 .about-features {
-  margin-top: 4rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 3rem;
 }
 
-.feature {
-  background: #f8fafc;
-  padding: 3rem 2rem;
+.feature-card {
+  background: #f9fafb;
+  padding: 3.5rem 2.5rem;
   border-radius: 1.6rem;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.feature:hover {
+.feature-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
-.feature i {
-  font-size: 3.4rem;
+.feature-card i {
+  font-size: 3.6rem;
   color: #2563eb;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 
-.feature h3 {
+.feature-card h3 {
   font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.feature-card p {
+  font-size: 1.4rem;
+  color: #4b5563;
 }
 
 /* ===============================
-   FOOTER (HOME STYLE)
+   MISSION SECTION
 ================================ */
-footer {
+.mission-section {
+  background: #2563eb;
+  color: #ffffff;
+  padding: 6rem 0;
   text-align: center;
-  padding: 2.5rem 0;
+}
+
+.mission-section h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.mission-section p {
+  font-size: 1.6rem;
+  max-width: 750px;
+  margin: auto;
+  opacity: 0.95;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+.footer {
+  text-align: center;
+  padding: 2.8rem 1rem;
   font-size: 1.3rem;
   color: #6b7280;
+  background: #f9fafb;
 }
 
 /* ===============================
@@ -151,9 +182,16 @@ footer {
   .navbar {
     flex-direction: column;
     gap: 1.5rem;
+    height: auto;
+    padding: 1.5rem 0;
   }
 
   .about-hero h1 {
     font-size: 2.8rem;
+  }
+
+  .about-section h2,
+  .mission-section h2 {
+    font-size: 2.4rem;
   }
 }

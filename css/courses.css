@@ -1,191 +1,109 @@
 /* ===============================
-   GLOBAL
+   HEX CONNECTION LINES
 ================================ */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.hex-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(37, 99, 235, 0.15) 0%,
+    rgba(37, 99, 235, 0.05) 35%,
+    transparent 70%
+  );
+  z-index: 0;
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-  background: #f8fafc;
-  color: #1f2937;
-  line-height: 1.6;
+/* Line base */
+.hex::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 140px;
+  background: linear-gradient(
+    to bottom,
+    rgba(37, 99, 235, 0),
+    rgba(37, 99, 235, 0.6),
+    rgba(37, 99, 235, 0)
+  );
+  top: 50%;
+  left: 50%;
+  transform-origin: top;
+  animation: flow 2.8s infinite ease-in-out;
+  z-index: -1;
 }
 
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 0 2rem;
+/* Flow animation */
+@keyframes flow {
+  0% {
+    opacity: 0.2;
+    transform: scaleY(0.7);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scaleY(1);
+  }
+  100% {
+    opacity: 0.2;
+    transform: scaleY(0.7);
+  }
+}
+
+/* Disable line for center */
+.center-hex::after {
+  display: none;
 }
 
 /* ===============================
-   NAVBAR
+   COURSE DASHBOARD
 ================================ */
-header {
-  background: #ffffff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 80px;
-}
-
-.logo {
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: #2563eb;
-  text-decoration: none;
-}
-
-.nav-btn-container {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-
-.nav-btn-container a {
-  text-decoration: none;
-  padding: 0.6rem 1.4rem;
-  border-radius: 2rem;
-  border: 1px solid #2563eb;
-  color: #2563eb;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.nav-btn-container a:hover,
-.nav-btn-container a.active {
-  background: #2563eb;
-  color: #ffffff;
-}
-
-/* ===============================
-   HERO
-================================ */
-.about-hero {
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
-  color: white;
+.course-dashboard {
   padding: 6rem 0;
   text-align: center;
 }
 
-.about-hero h1 {
-  font-size: 3.6rem;
-  margin-bottom: 1rem;
-}
-
-.about-hero p {
-  font-size: 1.6rem;
-  max-width: 700px;
-  margin: auto;
-}
-
-/* ===============================
-   ABOUT SECTION
-================================ */
-.about-section {
-  padding: 6rem 0;
-  text-align: center;
-}
-
-.about-section h2 {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-}
-
-.about-text {
-  max-width: 750px;
-  margin: auto;
-  font-size: 1.5rem;
-  color: #4b5563;
-}
-
-/* ===============================
-   FEATURES
-================================ */
-.about-features {
+.course-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 3rem;
   margin-top: 4rem;
 }
 
-.feature-card {
+.course-card {
   background: white;
-  padding: 3rem;
-  border-radius: 1.6rem;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
+  padding: 3rem 2.5rem;
+  border-radius: 1.8rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.feature-card:hover {
+.course-card:hover {
   transform: translateY(-10px);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.12);
 }
 
-.feature-card i {
-  font-size: 3.5rem;
+.course-card i {
+  font-size: 3.6rem;
   color: #2563eb;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 
-.feature-card h3 {
+.course-card h3 {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
 }
 
-.feature-card p {
+.course-card p {
   font-size: 1.4rem;
-  color: #6b7280;
+  color: #4b5563;
+  margin-bottom: 1.4rem;
 }
 
-/* ===============================
-   MISSION
-================================ */
-.mission-section {
-  background: #eef2ff;
-  padding: 5rem 0;
-  text-align: center;
-}
-
-.mission-section h2 {
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
-}
-
-.mission-section p {
-  max-width: 700px;
-  margin: auto;
-  font-size: 1.5rem;
-  color: #374151;
-}
-
-/* ===============================
-   FOOTER
-================================ */
-.footer {
-  background: #0f172a;
-  color: #cbd5f5;
-  text-align: center;
-  padding: 2rem 0;
-  font-size: 1.3rem;
-}
-
-/* ===============================
-   RESPONSIVE
-================================ */
-@media (max-width: 768px) {
-  .about-hero h1 {
-    font-size: 2.8rem;
-  }
-
-  .navbar {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1.5rem 0;
-  }
+.course-card button {
+  padding: 0.6rem 1.6rem;
+  border-radius: 2rem;
+  border: none;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
 }
