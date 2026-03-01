@@ -1,231 +1,32 @@
-/* ================================
-   COURSE MAP LAYOUT (FIXED)
-================================ */
-
-.course-map {
-  padding: 4rem 0;
-  text-align: center;
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-.hex-container {
-  display: grid;
-  grid-template-columns: repeat(3, 220px);
-  grid-template-rows: repeat(3, 220px);
-  gap: 40px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 3rem;
-}
-
-/* ================================
-   COURSE CARDS
-================================ */
-
-.hex {
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 1.8rem 1.2rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+/* ========= NAVBAR ========= */
+.navbar {
+  height: 10rem;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.hex:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
-}
-
-/* ================================
-   CENTER CARD (EDOT)
-================================ */
-
-.center-hex {
-  background: #2f66f3;
-  color: #fff;
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-}
-
-.center-hex h3,
-.center-hex p {
-  color: #fff;
-}
-
-/* ================================
-   ICONS
-================================ */
-
-.hex-icon {
-  font-size: 2.5rem;
-  color: #2f66f3;
-  margin-bottom: 0.8rem;
-}
-
-.center-icon {
-  color: #ffffff;
-}
-
-/* ================================
-   BUTTONS
-================================ */
-
-.hex button {
-  margin-top: 0.8rem;
-  padding: 6px 18px;
-  border-radius: 20px;
-  border: none;
-  background: #2f66f3;
-  color: #fff;
-  cursor: pointer;
-  font-size: 0.85rem;
-}
-
-.center-hex button {
-  background: #ffffff;
-  color: #2f66f3;
-}
-
-/* ================================
-   TEXT
-================================ */
-
-.hex h4,
-.hex h3 {
-  margin-bottom: 0.3rem;
-}
-
-.hex p {
-  font-size: 0.85rem;
-  color: #555;
-}
-
-
-
-
-/* ===============================
-   COURSE DASHBOARD
-================================ */
-
-.course-dashboard {
-  padding: 4rem 6%;
-  background: #ffffff;
-  font-family: "Poppins", sans-serif;
-}
-
-.course-header h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-.course-header p {
-  color: #555;
-  max-width: 720px;
-}
-
-/* ===============================
-   FILTERS
-================================ */
-
-.course-filters {
+.nav-btn-container {
+  list-style: none;
   display: flex;
-  gap: 1rem;
-  margin: 2rem 0;
-}
-
-.course-filters input,
-.course-filters select {
-  flex: 1;
-  padding: 0.8rem 1rem;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  font-size: 0.95rem;
-}
-
-/* ===============================
-   GRID
-================================ */
-
-.course-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
 }
 
-/* ===============================
-   CARD
-================================ */
-
-.course-card {
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 1.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* ========= LOGOS ========= */
+.logo-md {
+  width: 10rem;
 }
 
-.course-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+.logo-sm {
+  width: 8rem;
 }
 
-/* Tag box (purple area) */
-.course-tag {
-  background: linear-gradient(135deg, #f3e9ff, #efe3ff);
-  color: #7a2bdc;
-  font-weight: 600;
-  text-align: center;
-  padding: 1.2rem;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-  letter-spacing: 1px;
-}
-
-/* ===============================
-   TEXT
-================================ */
-
-.course-card h3 {
-  font-size: 1.05rem;
-  margin-bottom: 0.3rem;
-}
-
-.course-meta {
-  font-size: 0.85rem;
-  color: #666;
-}
-
-/* ===============================
-   BUTTONS
-================================ */
-
-.course-actions {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1.2rem;
-}
-
-.btn-outline {
-  padding: 6px 14px;
-  border-radius: 8px;
-  border: none;
-  background: #f1f1f1;
-  font-size: 0.8rem;
-  cursor: pointer;
-}
-
-.btn-primary {
-  padding: 6px 16px;
-  border-radius: 8px;
-  border: none;
-  background: #7a2bdc;
-  color: #ffffff;
-  font-size: 0.8rem;
-  cursor: pointer;
-}
 /* ===============================
    COURSES GRID
 ================================ */
