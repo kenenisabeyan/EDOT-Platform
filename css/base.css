@@ -1,0 +1,101 @@
+/* ===============================
+   EDOT BASE STYLES (GLOBAL)
+=============================== */
+
+:root {
+  --primary: #339af0;
+  --primary-dark: #1c7ed6;
+  --primary-light: #d0ebff;
+
+  --secondary: #9775fa;
+  --accent: #ff922b;
+
+  --grey-dark: #212529;
+  --grey: #495057;
+  --grey-light: #f1f3f5;
+
+  --white: #ffffff;
+  --font-main: "Poppins", sans-serif;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-main);
+  font-size: 1.6rem;
+  color: var(--grey);
+  line-height: 1.6;
+}
+
+/* LAYOUT */
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* NAVBAR */
+.navbar {
+  height: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-btn-container {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+/* LOGOS */
+.logo-md {
+  width: 10rem;
+}
+
+.logo-sm {
+  width: 8rem;
+}
+
+/* BUTTONS */
+.btn {
+  padding: 1.4rem 3rem;
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary-outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-primary-outline:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 6rem 0;
+}
+
+.small-text {
+  font-size: 1.2rem;
+}

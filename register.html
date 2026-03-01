@@ -1,46 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register-page</title>
-  <link rel="stylesheet" href="app.css">
+  <title>Register | EDOT</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/register.css">
 </head>
+
 <body>
 
-  <section class="auth-section">
-    <div class="auth-card">
-      <h2 class="auth-heading">Create Account</h2>
-  
-      <form id="register-form" class="auth-form">
-        <div class="form-group">
-          <label>Full Name</label>
-          <input type="text" id="register-name" required>
-        </div>
-  
-        <div class="form-group">
-          <label>Email</label>
-          <input type="email" id="register-email" required>
-        </div>
-  
-        <div class="form-group">
-          <label>Password</label>
-          <input type="password" id="register-password" required>
-        </div>
-  
-        <button class="btn btn-primary auth-btn">Create Account</button>
-      </form>
-  
-      <p class="auth-text">
-        Already have an account?
-        <a href="login.html">Login</a>
-      </p>
-    </div>
-  </section>
+  <div class="auth-card">
+    <img src="assets/images/edot-logos.png" class="auth-logo" alt="EDOT logo">
 
-  <script src="js/script.js"></script>
+    <h2 class="auth-heading">Create Account</h2>
+
+    <form class="auth-form">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" required>
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" required>
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" required>
+      </div>
+
+      <button class="auth-btn">Register</button>
+    </form>
+
+    <p class="auth-text">
+      Already have an account?
+      <a href="login.html">Login</a>
+    </p>
+  </div>
+
+  <script src="js/register.js"></script>
 </body>
+
 </html>
