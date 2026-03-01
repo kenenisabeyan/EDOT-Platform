@@ -20,6 +20,12 @@ body {
   padding: 0 2rem;
 }
 
+.section-title {
+  text-align: center;
+  font-size: 2.8rem;
+  margin: 4rem 0 2rem;
+}
+
 /* ===============================
    NAVBAR
 ================================ */
@@ -29,30 +35,30 @@ header {
 }
 
 .navbar {
-  height: 90px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 80px;
 }
 
 .logo-md {
-  height: 48px;
+  height: 45px;
 }
 
 .nav-btn-container {
-  list-style: none;
   display: flex;
-  gap: 1.2rem;
+  list-style: none;
+  gap: 1.5rem;
 }
 
 .nav-btn-container a {
+  text-decoration: none;
   padding: 0.6rem 1.4rem;
   border-radius: 2rem;
-  border: 2px solid #2563eb;
+  border: 1px solid #2563eb;
   color: #2563eb;
-  text-decoration: none;
   font-weight: 500;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .nav-btn-container a:hover {
@@ -61,23 +67,19 @@ header {
 }
 
 /* ===============================
-   COURSE MAP (HEX)
+   HEX COURSE MAP
 ================================ */
 .course-map {
-  padding: 6rem 0;
-  text-align: center;
-}
-
-.section-title {
-  font-size: 3rem;
-  margin-bottom: 4rem;
+  padding: 5rem 0;
 }
 
 .hex-container {
   position: relative;
-  width: 600px;
-  height: 600px;
-  margin: auto;
+  width: 100%;
+  min-height: 520px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Background glow */
@@ -85,27 +87,21 @@ header {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle,
+  background: radial-gradient(circle at center,
       rgba(37, 99, 235, 0.15),
       transparent 70%);
-  z-index: 0;
 }
 
-/* ===============================
-   HEX CARD
-================================ */
+/* Hex base */
 .hex {
-  position: absolute;
   width: 160px;
   height: 160px;
   background: white;
-  clip-path: polygon(25% 6%, 75% 6%,
-      100% 50%,
-      75% 94%, 25% 94%,
-      0% 50%);
+  border-radius: 18px;
+  position: absolute;
+  text-align: center;
   padding: 1.5rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  z-index: 1;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
@@ -113,18 +109,25 @@ header {
   transform: translateY(-8px);
 }
 
+.hex-icon {
+  font-size: 2.8rem;
+  color: #2563eb;
+  margin-bottom: 0.6rem;
+}
+
 .hex h3,
 .hex h4 {
-  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
 }
 
 .hex p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+  color: #4b5563;
 }
 
 .hex button {
-  margin-top: 0.8rem;
-  padding: 0.5rem 1.4rem;
+  margin-top: 0.6rem;
+  padding: 0.4rem 1.2rem;
   border-radius: 2rem;
   border: none;
   background: #2563eb;
@@ -132,28 +135,16 @@ header {
   cursor: pointer;
 }
 
-/* ===============================
-   ICONS
-================================ */
-.hex-icon {
-  font-size: 3.2rem;
-  color: #2563eb;
-  margin-bottom: 1rem;
-  animation: pulse 3s infinite ease-in-out;
-}
-
-.center-icon {
-  font-size: 4rem;
+/* Center hex */
+.center-hex {
+  position: relative;
+  z-index: 3;
+  background: #2563eb;
   color: white;
 }
 
-/* ===============================
-   CENTER HEX
-================================ */
-.center-hex {
-  top: 220px;
-  left: 220px;
-  background: #2563eb;
+.center-hex .hex-icon,
+.center-hex p {
   color: white;
 }
 
@@ -162,64 +153,47 @@ header {
   color: #2563eb;
 }
 
-/* ===============================
-   HEX POSITIONS
-================================ */
+/* Positions */
 .math {
-  top: 20px;
-  left: 220px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .english {
-  top: 120px;
-  left: 420px;
+  top: 30%;
+  left: 10%;
 }
 
 .physics {
-  top: 320px;
-  left: 420px;
+  top: 30%;
+  right: 10%;
 }
 
 .chemistry {
-  top: 420px;
-  left: 220px;
+  bottom: 0;
+  left: 20%;
 }
 
 .biology {
-  top: 320px;
-  left: 20px;
+  bottom: 0;
+  right: 20%;
 }
 
 .programming {
-  top: 120px;
-  left: 20px;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .aptitude {
-  top: 0;
-  left: 20px;
+  top: 60%;
+  left: 0;
 }
 
 .social {
-  top: 0;
-  left: 420px;
-}
-
-/* ===============================
-   ICON ANIMATION
-================================ */
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.08);
-  }
-
-  100% {
-    transform: scale(1);
-  }
+  top: 60%;
+  right: 0;
 }
 
 /* ===============================
@@ -234,7 +208,7 @@ header {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 3rem;
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 
 .course-card {
@@ -247,7 +221,7 @@ header {
 
 .course-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.12);
 }
 
 .course-card i {
@@ -258,7 +232,6 @@ header {
 
 .course-card h3 {
   font-size: 2rem;
-  margin-bottom: 0.6rem;
 }
 
 .course-card p {
@@ -280,9 +253,10 @@ header {
    FOOTER
 ================================ */
 .footer {
+  background: #0f172a;
+  color: #cbd5f5;
   text-align: center;
-  padding: 2.5rem 0;
-  color: #6b7280;
+  padding: 2rem 0;
   font-size: 1.3rem;
 }
 
@@ -291,16 +265,11 @@ header {
 ================================ */
 @media (max-width: 768px) {
   .hex-container {
-    width: auto;
-    height: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 2rem;
+    min-height: 900px;
   }
 
   .hex {
     position: static;
-    clip-path: none;
-    border-radius: 1.2rem;
+    margin: 1rem auto;
   }
 }
