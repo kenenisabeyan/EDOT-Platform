@@ -1,0 +1,130 @@
+/* ===============================
+   GLOBAL
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f8fafc;
+  color: #1f2937;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 4rem 2rem;
+}
+
+/* ===============================
+   TITLES
+================================ */
+.section-title {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 0.8rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 4rem;
+}
+
+/* ===============================
+   CONTACT LAYOUT
+================================ */
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+/* ===============================
+   CONTACT INFO
+================================ */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info-box {
+  display: flex;
+  gap: 1.4rem;
+  align-items: center;
+}
+
+.info-box i {
+  font-size: 2rem;
+  color: #2563eb;
+}
+
+.info-box h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+/* ===============================
+   CONTACT FORM
+================================ */
+.contact-form {
+  background: white;
+  padding: 3rem;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 30px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #1d4ed8;
+}
+
+.form-status {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+}

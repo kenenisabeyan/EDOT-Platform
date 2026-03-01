@@ -1,10 +1,27 @@
+/* ===============================
+   GLOBAL
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f8fafc;
+  color: #1f2937;
+}
+
 .container {
   max-width: 120rem;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
-/* ========= NAVBAR ========= */
+/* ===============================
+   NAVBAR
+================================ */
 .navbar {
   height: 10rem;
   display: flex;
@@ -18,82 +35,101 @@
   gap: 2rem;
 }
 
-/* ========= LOGOS ========= */
+.nav-btn-container a {
+  text-decoration: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 2rem;
+  border: 1px solid #2563eb;
+  color: #2563eb;
+  font-weight: 500;
+}
+
+.nav-btn-container a:hover {
+  background: #2563eb;
+  color: white;
+}
+
+/* ===============================
+   LOGO
+================================ */
 .logo-md {
   width: 10rem;
 }
 
-.logo-sm {
-  width: 8rem;
-}
-
 /* ===============================
-   COURSES GRID
+   COURSES SECTION
 ================================ */
-
 .courses-section {
   padding: 4rem 6%;
   text-align: center;
 }
 
 .section-title {
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 700;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
-/* GRID */
+/* ===============================
+   COURSES GRID
+================================ */
 .courses-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
+  gap: 3.5rem;
   justify-items: center;
 }
 
-/* CARD */
+/* ===============================
+   COURSE CARD
+================================ */
 .course-card {
   width: 260px;
-  padding: 2.5rem 2rem;
+  padding: 2.6rem 2rem;
   background: #ffffff;
   border-radius: 18px;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .course-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
 }
 
 .course-card i {
-  font-size: 3rem;
+  font-size: 3.2rem;
   color: #2563eb;
-  margin-bottom: 1rem;
-}
-
-.course-card h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-}
-
-.course-card p {
-  font-size: 0.9rem;
-  color: #555;
   margin-bottom: 1.2rem;
 }
 
-/* BUTTON */
+.course-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.course-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1.4rem;
+}
+
+/* ===============================
+   BUTTON
+================================ */
 .course-card button {
-  padding: 0.45rem 1.5rem;
+  padding: 0.5rem 1.6rem;
   border-radius: 20px;
   border: none;
   background: #2563eb;
   color: white;
-  cursor: pointer;
   font-size: 0.85rem;
+  cursor: pointer;
 }
 
-/* CENTER CARD */
+/* ===============================
+   CENTER CARD (EDOT)
+================================ */
 .center-card {
   background: #2563eb;
   color: white;
@@ -104,13 +140,26 @@
   color: white;
 }
 
-.center-btn {
+.center-card button {
   background: white;
   color: #2563eb;
   font-weight: 600;
 }
 
-/* RESPONSIVE */
+/* ===============================
+   FOOTER
+================================ */
+.footer {
+  background: #0f172a;
+  color: #cbd5f5;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 6rem;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
 @media (max-width: 900px) {
   .courses-grid {
     grid-template-columns: repeat(2, 1fr);
