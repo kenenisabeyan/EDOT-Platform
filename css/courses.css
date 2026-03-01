@@ -101,3 +101,223 @@
   font-size: 0.85rem;
   color: #555;
 }
+
+
+
+
+/* ===============================
+   COURSE DASHBOARD
+================================ */
+
+.course-dashboard {
+  padding: 4rem 6%;
+  background: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+
+.course-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.course-header p {
+  color: #555;
+  max-width: 720px;
+}
+
+/* ===============================
+   FILTERS
+================================ */
+
+.course-filters {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.course-filters input,
+.course-filters select {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+}
+
+/* ===============================
+   GRID
+================================ */
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+/* ===============================
+   CARD
+================================ */
+
+.course-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Tag box (purple area) */
+.course-tag {
+  background: linear-gradient(135deg, #f3e9ff, #efe3ff);
+  color: #7a2bdc;
+  font-weight: 600;
+  text-align: center;
+  padding: 1.2rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+/* ===============================
+   TEXT
+================================ */
+
+.course-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+}
+
+.course-meta {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+
+.course-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.2rem;
+}
+
+.btn-outline {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #f1f1f1;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.btn-primary {
+  padding: 6px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #7a2bdc;
+  color: #ffffff;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+/* ===============================
+   COURSES GRID
+================================ */
+
+.courses-section {
+  padding: 4rem 6%;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+/* GRID */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  justify-items: center;
+}
+
+/* CARD */
+.course-card {
+  width: 260px;
+  padding: 2.5rem 2rem;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+.course-card i {
+  font-size: 3rem;
+  color: #2563eb;
+  margin-bottom: 1rem;
+}
+
+.course-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.course-card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1.2rem;
+}
+
+/* BUTTON */
+.course-card button {
+  padding: 0.45rem 1.5rem;
+  border-radius: 20px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+/* CENTER CARD */
+.center-card {
+  background: #2563eb;
+  color: white;
+}
+
+.center-card i,
+.center-card p {
+  color: white;
+}
+
+.center-btn {
+  background: white;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+}
