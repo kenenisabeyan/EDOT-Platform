@@ -1,63 +1,230 @@
 /* ===============================
-   HEX CONNECTION LINES
+   GLOBAL
 ================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f8fafc;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 2rem;
+}
+
+/* ===============================
+   NAVBAR
+================================ */
+header {
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.navbar {
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-md {
+  height: 48px;
+}
+
+.nav-btn-container {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+}
+
+.nav-btn-container a {
+  padding: 0.6rem 1.4rem;
+  border-radius: 2rem;
+  border: 2px solid #2563eb;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.nav-btn-container a:hover {
+  background: #2563eb;
+  color: white;
+}
+
+/* ===============================
+   COURSE MAP (HEX)
+================================ */
+.course-map {
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 3rem;
+  margin-bottom: 4rem;
+}
+
+.hex-container {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin: auto;
+}
+
+/* Background glow */
 .hex-container::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    circle at center,
-    rgba(37, 99, 235, 0.15) 0%,
-    rgba(37, 99, 235, 0.05) 35%,
-    transparent 70%
-  );
+  background: radial-gradient(circle,
+      rgba(37, 99, 235, 0.15),
+      transparent 70%);
   z-index: 0;
 }
 
-/* Line base */
-.hex::after {
-  content: "";
+/* ===============================
+   HEX CARD
+================================ */
+.hex {
   position: absolute;
-  width: 2px;
-  height: 140px;
-  background: linear-gradient(
-    to bottom,
-    rgba(37, 99, 235, 0),
-    rgba(37, 99, 235, 0.6),
-    rgba(37, 99, 235, 0)
-  );
-  top: 50%;
-  left: 50%;
-  transform-origin: top;
-  animation: flow 2.8s infinite ease-in-out;
-  z-index: -1;
+  width: 160px;
+  height: 160px;
+  background: white;
+  clip-path: polygon(25% 6%, 75% 6%,
+      100% 50%,
+      75% 94%, 25% 94%,
+      0% 50%);
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  transition: transform 0.3s ease;
 }
 
-/* Flow animation */
-@keyframes flow {
+.hex:hover {
+  transform: translateY(-8px);
+}
+
+.hex h3,
+.hex h4 {
+  margin-bottom: 0.5rem;
+}
+
+.hex p {
+  font-size: 1.3rem;
+}
+
+.hex button {
+  margin-top: 0.8rem;
+  padding: 0.5rem 1.4rem;
+  border-radius: 2rem;
+  border: none;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+/* ===============================
+   ICONS
+================================ */
+.hex-icon {
+  font-size: 3.2rem;
+  color: #2563eb;
+  margin-bottom: 1rem;
+  animation: pulse 3s infinite ease-in-out;
+}
+
+.center-icon {
+  font-size: 4rem;
+  color: white;
+}
+
+/* ===============================
+   CENTER HEX
+================================ */
+.center-hex {
+  top: 220px;
+  left: 220px;
+  background: #2563eb;
+  color: white;
+}
+
+.center-hex button {
+  background: white;
+  color: #2563eb;
+}
+
+/* ===============================
+   HEX POSITIONS
+================================ */
+.math {
+  top: 20px;
+  left: 220px;
+}
+
+.english {
+  top: 120px;
+  left: 420px;
+}
+
+.physics {
+  top: 320px;
+  left: 420px;
+}
+
+.chemistry {
+  top: 420px;
+  left: 220px;
+}
+
+.biology {
+  top: 320px;
+  left: 20px;
+}
+
+.programming {
+  top: 120px;
+  left: 20px;
+}
+
+.aptitude {
+  top: 0;
+  left: 20px;
+}
+
+.social {
+  top: 0;
+  left: 420px;
+}
+
+/* ===============================
+   ICON ANIMATION
+================================ */
+@keyframes pulse {
   0% {
-    opacity: 0.2;
-    transform: scaleY(0.7);
+    transform: scale(1);
   }
-  50% {
-    opacity: 0.8;
-    transform: scaleY(1);
-  }
-  100% {
-    opacity: 0.2;
-    transform: scaleY(0.7);
-  }
-}
 
-/* Disable line for center */
-.center-hex::after {
-  display: none;
+  50% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* ===============================
    COURSE DASHBOARD
 ================================ */
-
 .course-dashboard {
   padding: 6rem 0;
   text-align: center;
@@ -80,7 +247,7 @@
 
 .course-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
 }
 
 .course-card i {
@@ -109,27 +276,31 @@
   cursor: pointer;
 }
 
-/* ================= JS ANIMATIONS ================= */
-body {
-  opacity: 0;
-  transition: opacity 0.8s ease;
+/* ===============================
+   FOOTER
+================================ */
+.footer {
+  text-align: center;
+  padding: 2.5rem 0;
+  color: #6b7280;
+  font-size: 1.3rem;
 }
 
-body.loaded {
-  opacity: 1;
-}
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .hex-container {
+    width: auto;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+  }
 
-.card {
-  opacity: 0;
-  transform: translateY(30px);
-}
-
-.card.show {
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 0.6s ease;
-}
-
-.card.clicked {
-  transform: scale(0.97);
+  .hex {
+    position: static;
+    clip-path: none;
+    border-radius: 1.2rem;
+  }
 }
