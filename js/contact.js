@@ -1,27 +1,27 @@
 const form = document.getElementById("contactForm");
-const status = document.getElementById("formStatus");
+const statusText = document.getElementById("formStatus");
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
 
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
   const message = document.getElementById("message").value.trim();
 
-  if (!name || !email || !message) {
-    status.style.color = "red";
-    status.textContent = "Please fill in all fields.";
+  if (name === "" || email === "" || message === "") {
+    statusText.style.color = "red";
+    statusText.textContent = "Please fill in all fields.";
     return;
   }
 
   if (!email.includes("@")) {
-    status.style.color = "red";
-    status.textContent = "Enter a valid email address.";
+    statusText.style.color = "red";
+    statusText.textContent = "Please enter a valid email.";
     return;
   }
 
-  status.style.color = "#38bdf8";
-  status.textContent = "Message sent successfully!";
+  statusText.style.color = "#38bdf8";
+  statusText.textContent = "Message sent successfully!";
 
   form.reset();
 });

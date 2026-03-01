@@ -2,9 +2,13 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Contact Us | EDOT</title>
-  <link rel="stylesheet" href="/css/contact.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | EDOT Platform</title>
+  <link rel="stylesheet" href="./css/contact.css">
+
+  <!-- CSS -->
+  <!-- <link rel="stylesheet" href="/css/contact.css" /> -->
 </head>
 
 <body>
@@ -12,35 +16,38 @@
   <section class="contact-section">
     <div class="contact-container">
 
+      <!-- LEFT INFO -->
       <div class="contact-info">
         <h2>Contact EDOT</h2>
         <p>
-          Have questions or need support?
-          Reach out to the EDOT team — we’re here to help your learning journey.
+          Have any questions or ideas?
+          The EDOT team is ready to support your learning journey.
         </p>
 
         <ul>
-          <li>📍 Ethiopia</li>
-          <li>📧 edotplatform@gmail.com</li>
-          <li>📞 +251 9XX XXX XXX</li>
+          <li><strong>📍 Location:</strong> Ethiopia</li>
+          <li><strong>📧 Email:</strong> edotplatform@gmail.com</li>
+          <li><strong>📞 Phone:</strong> +251 9XX XXX XXX</li>
         </ul>
       </div>
 
+      <!-- RIGHT FORM -->
       <form class="contact-form" id="contactForm">
-        <h3>Send Message</h3>
+        <h3>Send a Message</h3>
 
-        <input type="text" id="name" placeholder="Your Name">
-        <input type="email" id="email" placeholder="Your Email">
+        <input type="text" id="name" placeholder="Your Name" />
+        <input type="email" id="email" placeholder="Your Email" />
         <textarea id="message" placeholder="Your Message"></textarea>
 
         <button type="submit">Send Message</button>
-        <p class="form-status" id="formStatus"></p>
+        <p id="formStatus" class="form-status"></p>
       </form>
 
     </div>
   </section>
 
-  <script src="/js/contact.js"></script>
+  <!-- JS -->
+  <script src="./js/contact.js"></script>
 </body>
 
 </html>

@@ -10,7 +10,9 @@
 body {
   font-family: "Poppins", sans-serif;
   background: #f8fafc;
-  color: #1f2937;
+  background-color: #0f172a;
+  /* color: #1f2937; */
+  color:#ffffff
 }
 
 .container {
@@ -54,6 +56,7 @@ body {
 ================================ */
 .logo-md {
   width: 10rem;
+  border-radius: 50%;
 }
 
 /* ===============================
@@ -87,6 +90,7 @@ body {
   width: 260px;
   padding: 2.6rem 2rem;
   background: #ffffff;
+  background-color: #bfe9c1;
   border-radius: 18px;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
@@ -99,7 +103,7 @@ body {
 
 .course-card i {
   font-size: 3.2rem;
-  color: #2563eb;
+  color: #2e4169;
   margin-bottom: 1.2rem;
 }
 
@@ -110,7 +114,7 @@ body {
 
 .course-card p {
   font-size: 0.95rem;
-  color: #555;
+  color: #75b8ad;
   margin-bottom: 1.4rem;
 }
 
@@ -121,8 +125,8 @@ body {
   padding: 0.5rem 1.6rem;
   border-radius: 20px;
   border: none;
-  background: #2563eb;
-  color: white;
+  background: #365086;
+  color: rgb(145, 84, 4);
   font-size: 0.85rem;
   cursor: pointer;
 }
@@ -131,18 +135,18 @@ body {
    CENTER CARD (EDOT)
 ================================ */
 .center-card {
-  background: #2563eb;
-  color: white;
+  background: #bd841b;
+  color: rgb(45, 15, 211);
 }
 
 .center-card i,
 .center-card p {
-  color: white;
+  color: rgb(1, 9, 19);
 }
 
 .center-card button {
   background: white;
-  color: #2563eb;
+  color: #172f63;
   font-weight: 600;
 }
 
@@ -150,7 +154,7 @@ body {
    FOOTER
 ================================ */
 .footer {
-  background: #0f172a;
+  background: #3a3d46;
   color: #cbd5f5;
   text-align: center;
   padding: 2rem 0;
