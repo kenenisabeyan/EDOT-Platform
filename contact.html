@@ -2,72 +2,36 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | EDOT Platform</title>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="./css/contact.css">
+  <meta charset="UTF-8">
+  <title>Contact Us | EDOT</title>
+  <link rel="stylesheet" href="/css/contact.css">
 </head>
 
 <body>
 
-  <!-- CONTACT SECTION -->
-  <section class="contact-section container">
-    <h2 class="section-title">Contact EDOT</h2>
-    <p class="section-subtitle">
-      Have questions? Want to join EDOT?
-      We’d love to hear from you.
-    </p>
+  <section class="contact-section">
+    <div class="contact-container">
 
-    <div class="contact-wrapper">
-
-      <!-- CONTACT INFO -->
       <div class="contact-info">
-        <div class="info-box">
-          <i class="fas fa-envelope"></i>
-          <div>
-            <h4>Email</h4>
-            <p>support@edotplatform.com</p>
-          </div>
-        </div>
+        <h2>Contact EDOT</h2>
+        <p>
+          Have questions or need support?
+          Reach out to the EDOT team — we’re here to help your learning journey.
+        </p>
 
-        <div class="info-box">
-          <i class="fas fa-phone"></i>
-          <div>
-            <h4>Phone</h4>
-            <p>+251 9XX XXX XXX</p>
-          </div>
-        </div>
-
-        <div class="info-box">
-          <i class="fas fa-location-dot"></i>
-          <div>
-            <h4>Location</h4>
-            <p>Ethiopia</p>
-          </div>
-        </div>
+        <ul>
+          <li>📍 Ethiopia</li>
+          <li>📧 edotplatform@gmail.com</li>
+          <li>📞 +251 9XX XXX XXX</li>
+        </ul>
       </div>
 
-      <!-- CONTACT FORM -->
       <form class="contact-form" id="contactForm">
-        <div class="form-group">
-          <input type="text" id="name" placeholder="Your Name" required>
-        </div>
+        <h3>Send Message</h3>
 
-        <div class="form-group">
-          <input type="email" id="email" placeholder="Your Email" required>
-        </div>
-
-        <div class="form-group">
-          <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
-        </div>
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="email" id="email" placeholder="Your Email">
+        <textarea id="message" placeholder="Your Message"></textarea>
 
         <button type="submit">Send Message</button>
         <p class="form-status" id="formStatus"></p>
@@ -76,9 +40,7 @@
     </div>
   </section>
 
-  <!-- JS -->
-  <script src="./js/contact.js"></script>
-
+  <script src="/js/contact.js"></script>
 </body>
 
 </html>

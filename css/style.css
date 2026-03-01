@@ -1,83 +1,43 @@
-/* ===============================
-   AUTH PAGES (LOGIN & REGISTER)
-=============================== */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us | EDOT</title>
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
 
-.auth-section {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: var(--grey-light);
-  padding: 4rem 2rem;
-}
+<section class="contact-section">
+  <div class="contact-container">
 
-.auth-card {
-  background: var(--white);
-  width: 100%;
-  max-width: 42rem;
-  padding: 4rem;
-  border-radius: 1.6rem;
-  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.08);
-}
+    <div class="contact-info">
+      <h2>Contact EDOT</h2>
+      <p>
+        Have questions or need support?  
+        Reach out to the EDOT team — we’re here to help your learning journey.
+      </p>
 
-.auth-heading {
-  font-size: 3.2rem;
-  color: var(--grey-dark);
-  text-align: center;
-  margin-bottom: 3rem;
-}
+      <ul>
+        <li>📍 Ethiopia</li>
+        <li>📧 edotplatform@gmail.com</li>
+        <li>📞 +251 9XX XXX XXX</li>
+      </ul>
+    </div>
 
-/* ===== FORM ===== */
-.auth-form {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
+    <form class="contact-form" id="contactForm">
+      <h3>Send Message</h3>
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
+      <input type="text" id="name" placeholder="Your Name">
+      <input type="email" id="email" placeholder="Your Email">
+      <textarea id="message" placeholder="Your Message"></textarea>
 
-.form-group label {
-  font-size: 1.4rem;
-  color: var(--grey-dark);
-}
+      <button type="submit">Send Message</button>
+      <p class="form-status" id="formStatus"></p>
+    </form>
 
-.form-group input {
-  padding: 1.4rem 1.6rem;
-  font-size: 1.6rem;
-  border-radius: 0.8rem;
-  border: 1px solid #dee2e6;
-  font-family: inherit;
-}
+  </div>
+</section>
 
-.form-group input:focus {
-  outline: none;
-  border-color: var(--primary);
-}
-
-/* ===== AUTH BUTTON ===== */
-.auth-btn {
-  margin-top: 1rem;
-  width: 100%;
-  text-align: center;
-}
-
-/* ===== EXTRA LINKS ===== */
-.auth-text {
-  margin-top: 2rem;
-  text-align: center;
-  font-size: 1.4rem;
-}
-
-.auth-text a {
-  color: var(--primary);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.auth-text a:hover {
-  text-decoration: underline;
-}
+<script src="contact.js"></script>
+</body>
+</html>

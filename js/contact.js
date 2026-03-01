@@ -1,5 +1,5 @@
 const form = document.getElementById("contactForm");
-const statusText = document.getElementById("formStatus");
+const status = document.getElementById("formStatus");
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -9,13 +9,19 @@ form.addEventListener("submit", function (e) {
   const message = document.getElementById("message").value.trim();
 
   if (!name || !email || !message) {
-    statusText.textContent = "Please fill in all fields.";
-    statusText.style.color = "red";
+    status.style.color = "red";
+    status.textContent = "Please fill in all fields.";
     return;
   }
 
-  statusText.textContent = "Message sent successfully ✔";
-  statusText.style.color = "green";
+  if (!email.includes("@")) {
+    status.style.color = "red";
+    status.textContent = "Enter a valid email address.";
+    return;
+  }
+
+  status.style.color = "#38bdf8";
+  status.textContent = "Message sent successfully!";
 
   form.reset();
 });
