@@ -38,6 +38,22 @@ body {
 }
 
 /* LEFT INFO */
+
+.contact-info {
+    background:
+      linear-gradient(rgba(15, 40, 90, 0.85),
+        rgba(15, 40, 90, 0.85)),
+      url("./assets/images/contactme.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    color: #ffffff;
+}
 .contact-info h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -117,82 +133,3 @@ body {
 
 
 
-/* ===== RESET & FONT ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", Arial, sans-serif;
-}
-
-/* ===== CONTACT SECTION BACKGROUND ===== */
-.contact-section {
-  min-height: 100vh;
-  background:
-    linear-gradient(rgba(15, 40, 90, 0.85),
-      rgba(15, 40, 90, 0.85)),
-    url("./assets/images/contactme.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 20px;
-}
-
-/* ===== CARD ===== */
-.contact-card {
-  background: #ffffff;
-  max-width: 520px;
-  width: 100%;
-  padding: 45px 40px;
-  border-radius: 14px;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
-}
-
-/* ===== TITLE ===== */
-.contact-card h1 {
-  font-size: 32px;
-  font-weight: 600;
-  color: #1f3c88;
-  margin-bottom: 18px;
-}
-
-/* ===== DESCRIPTION ===== */
-.contact-description {
-  font-size: 16px;
-  color: #555;
-  line-height: 1.7;
-  margin-bottom: 30px;
-}
-
-/* ===== DETAILS ===== */
-.contact-details {
-  list-style: none;
-}
-
-.contact-details li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 18px;
-  font-size: 16px;
-  color: #333;
-}
-
-.contact-details .icon {
-  font-size: 20px;
-  margin-right: 12px;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 500px) {
-  .contact-card {
-    padding: 35px 25px;
-  }
-
-  .contact-card h1 {
-    font-size: 26px;
-  }
-}
