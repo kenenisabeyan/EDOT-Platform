@@ -1,3 +1,9 @@
+const user = JSON.parse(localStorage.getItem("edotUser"));
+
+if (!user || !user.loggedIn) {
+  window.location.href = "login.html";
+}
+
 const menuBtn = document.getElementById("menuBtn");
 const sidebar = document.getElementById("sidebar");
 
