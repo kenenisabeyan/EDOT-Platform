@@ -4,6 +4,10 @@ if (!user || !user.loggedIn) {
   window.location.href = "login.html";
 }
 
+if (user.role === "admin") {
+  document.getElementById("adminPanel").style.display = "block";
+}
+
 const progressData = JSON.parse(localStorage.getItem("edotProgress")) || {
   math: 40,
   english: 25,
