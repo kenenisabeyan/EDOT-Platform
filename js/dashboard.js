@@ -38,6 +38,26 @@ toggle.addEventListener("click", () => {
   );
 });
 
+document.getElementById("logoutBtn").onclick = () => {
+  localStorage.removeItem("edotUser");
+  window.location.href = "login.html";
+};
+
+// Auto logout (10 minutes)
+let timer;
+function resetTimer() {
+  clearTimeout(timer);
+  timer = setTimeout(() => {
+    localStorage.removeItem("edotUser");
+    alert("Session expired");
+    window.location.href = "login.html";
+  }, 600000);
+}
+
+document.onmousemove = resetTimer;
+document.onkeypress = resetTimer;
+resetTimer();
+
 menuBtn.addEventListener("click", () => {
   sidebar.classList.toggle("show");
 });
