@@ -1,676 +1,121 @@
-/* ===============================
-EDOT PLATFORM – MAIN STYLES
-MATCHED WITH PROVIDED HTML
-=============================== */
-
-/* ========= VARIABLES ========= */
+/* =========================
+   THEME VARIABLES
+========================= */
 :root {
-  --primary: #339af0;
-  --primary-dark: #1c7ed6;
-  --primary-light: #d0ebff;
-
-  --secondary: #9775fa;
-  --accent: #ff922b;
-
-  --grey-dark: #212529;
-  --grey: #495057;
-  --grey-light: #f1f3f5;
-
-  --white: #ffffff;
-
-  --font-main: "Poppins", sans-serif;
+  --primary: #1f3c88;
+  --secondary: #f59e0b;
+  --background: #f5f7fb;
+  --text-dark: #222;
+  --text-light: #fff;
+  --border-radius: 12px;
 }
 
-/* ========= RESET ========= */
+/* =========================
+   GLOBAL RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-/* ========= BASE ========= */
-html {
-  font-size: 62.5%;
+  font-family: "Poppins", Arial, sans-serif;
 }
 
 body {
-  font-family: var(--font-main);
-  font-size: 1.6rem;
-  color: var(--grey);
-  line-height: 1.6;
+  background-color: var(--background);
+  color: var(--text-dark);
 }
 
-.container {
-  max-width: 120rem;
-  margin: 0 auto;
-  padding: 0 2rem;
+/* =========================
+   NAVBAR
+========================= */
+.site-header {
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-/* ========= NAVBAR ========= */
 .navbar {
-  height: 10rem;
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 2rem;
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
-.nav-btn-container {
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.logo img {
+  width: 40px;
+}
+
+.nav-links {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 25px;
 }
 
-/* ========= LOGOS ========= */
-.logo-md {
-  width: 10rem;
-}
-
-.logo-sm {
-  width: 8rem;
-}
-
-/* ========= BUTTONS ========= */
-.btn {
-  display: inline-block;
-  padding: 1.4rem 3rem;
-  border-radius: 0.8rem;
-  font-size: 1.6rem;
-  font-weight: 500;
+.nav-links a {
   text-decoration: none;
-  transition: all 0.3s;
+  color: var(--text-dark);
+  font-weight: 500;
 }
 
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+/* Buttons */
 .btn-primary {
   background: var(--primary);
-  color: var(--white);
+  color: white;
+  padding: 8px 18px;
+  border-radius: var(--border-radius);
+  text-decoration: none;
 }
 
-.btn-primary:hover {
-  background: var(--primary-dark);
-}
-
-.btn-primary-outline {
+.btn-outline {
   border: 2px solid var(--primary);
   color: var(--primary);
-}
-
-.btn-primary-outline:hover {
-  background: var(--primary);
-  color: var(--white);
-}
-
-.btn-secondary {
-  background: var(--secondary);
-  color: var(--white);
-}
-
-/* ========= HERO ========= */
-.hero-section {
-  height: calc(100vh - 10rem);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.hero-heading {
-  font-size: 6rem;
-  font-weight: 700;
-  color: var(--grey-dark);
-  margin-bottom: 2rem;
-}
-
-.hero-paragragh {
-  font-size: 2rem;
-  max-width: 70rem;
-  margin-bottom: 4rem;
-}
-
-.hero-btn-container {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-}
-
-/* ========= HIGHLIGHTS ========= */
-.highlight {
-  padding: 0.4rem 1rem;
-  border-radius: 0.4rem;
-  color: var(--white);
-}
-
-.highlight-secondary {
-  background: var(--secondary);
-}
-
-.highlight-tertiary {
-  background: var(--accent);
-}
-
-/* ========= FEATURES ========= */
-.features-section {
-  margin-bottom: 30rem;
-}
-
-.features-main-heading {
-  text-align: center;
-  font-size: 4.8rem;
-  margin-bottom: 8rem;
-  color: var(--grey-dark);
-}
-
-.features-grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8rem 5rem;
-  align-items: center;
-}
-
-.feature-headings {
-  font-size: 3rem;
-  color: var(--grey-dark);
-  margin-bottom: 1.5rem;
-}
-
-.feature-img {
-  width: 100%;
-  max-width: 40rem;
-  justify-self: center;
-}
-
-/* ========= CTA ========= */
-.cta-section {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 30rem;
-}
-
-.cta-card {
-  background: var(--primary);
-  padding: 8rem 16rem;
-  border-radius: 2rem;
-  text-align: center;
-}
-
-.cta-heading {
-  font-size: 4rem;
-  color: var(--white);
-  margin-bottom: 3rem;
-}
-
-/* ========= FOOTER ========= */
-.footer {
-  text-align: center;
-  padding-bottom: 6rem;
-}
-
-.footer-links-container,
-.social-icons-container {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin: 2rem 0;
-}
-
-.social-icons {
-  width: 2.4rem;
-}
-
-.small-text {
-  font-size: 1.2rem;
-}
-
-.heart-icon {
-  color: var(--secondary);
-}
-
-/* ========= CHAT ========= */
-.chat-container {
-  position: fixed;
-  right: 2rem;
-  bottom: 2rem;
-  width: 7rem;
-  height: 7rem;
-  background: var(--primary-light);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.chat-icon {
-  width: 4rem;
-}
-
-/* ========= BETA BADGE ========= */
-.beta {
-  position: relative;
-}
-
-.beta::after {
-  content: "beta";
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: translate(60%, -60%);
-  background: var(--accent);
-  color: var(--white);
-  font-size: 1.2rem;
-  padding: 0.3rem 0.8rem;
-  border-radius: 0.4rem;
-}
-
-
-
-/* ===============================
-   AUTH PAGES (LOGIN & REGISTER)
-=============================== */
-
-.auth-section {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: var(--grey-light);
-  padding: 4rem 2rem;
-}
-
-.auth-card {
-  background: var(--white);
-  width: 100%;
-  max-width: 42rem;
-  padding: 4rem;
-  border-radius: 1.6rem;
-  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.08);
-}
-
-.auth-heading {
-  font-size: 3.2rem;
-  color: var(--grey-dark);
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-/* ===== FORM ===== */
-.auth-form {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.form-group label {
-  font-size: 1.4rem;
-  color: var(--grey-dark);
-}
-
-.form-group input {
-  padding: 1.4rem 1.6rem;
-  font-size: 1.6rem;
-  border-radius: 0.8rem;
-  border: 1px solid #dee2e6;
-  font-family: inherit;
-}
-
-.form-group input:focus {
-  outline: none;
-  border-color: var(--primary);
-}
-
-/* ===== AUTH BUTTON ===== */
-.auth-btn {
-  margin-top: 1rem;
-  width: 100%;
-  text-align: center;
-}
-
-/* ===== EXTRA LINKS ===== */
-.auth-text {
-  margin-top: 2rem;
-  text-align: center;
-  font-size: 1.4rem;
-}
-
-.auth-text a {
-  color: var(--primary);
+  padding: 6px 16px;
+  border-radius: var(--border-radius);
   text-decoration: none;
-  font-weight: 500;
 }
 
-.auth-text a:hover {
-  text-decoration: underline;
+/* =========================
+   FOOTER
+========================= */
+.site-footer {
+  background: var(--primary);
+  color: white;
+  padding: 2rem;
+  margin-top: 4rem;
 }
 
-
-
-/* courses */
-
-.course-map {
-  padding: 6rem 2rem;
-  background: #f8fafc;
-  text-align: center;
-}
-
-.section-title {
-  font-size: 3rem;
-  margin-bottom: 4rem;
-}
-
-.hex-container {
-  position: relative;
-  width: 600px;
-  height: 600px;
+.footer-content {
+  max-width: 1200px;
   margin: auto;
-}
-
-.hex {
-  width: 160px;
-  height: 160px;
-  background: white;
-  clip-path: polygon(25% 6%, 75% 6%,
-      100% 50%,
-      75% 94%, 25% 94%,
-      0% 50%);
-  position: absolute;
-  padding: 1.5rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.hex h4,
-.hex h3 {
-  margin-bottom: .5rem;
-}
-
-.hex p {
-  font-size: 1.3rem;
-}
-
-.hex button {
-  margin-top: .8rem;
-  padding: .6rem 1.2rem;
-  border: none;
-  background: #2563eb;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-/* Center */
-.center-hex {
-  top: 220px;
-  left: 220px;
-  background: #2563eb;
-  color: white;
-}
-
-.center-hex button {
-  background: white;
-  color: #2563eb;
-}
-
-/* Positions */
-.math {
-  top: 20px;
-  left: 220px;
-}
-
-.english {
-  top: 120px;
-  left: 420px;
-}
-
-.physics {
-  top: 320px;
-  left: 420px;
-}
-
-.chemistry {
-  top: 420px;
-  left: 220px;
-}
-
-.biology {
-  top: 320px;
-  left: 20px;
-}
-
-.programming {
-  top: 120px;
-  left: 20px;
-}
-
-.aptitude {
-  top: 0;
-  left: 20px;
-}
-
-.social {
-  top: 0;
-  left: 420px;
-}
-
-.hex-icon {
-  font-size: 3.2rem;
-  color: #2563eb;
-  margin-bottom: 1rem;
-}
-
-.center-icon {
-  font-size: 4rem;
-  color: white;
-}
-
-/* Hover effect (professional feel) */
-.hex:hover {
-  transform: translateY(-8px);
-  transition: 0.3s ease;
-}
-
-.hex:hover .hex-icon {
-  color: #1d4ed8;
-}
-
-
-/* ===============================
-ICON ANIMATIONS
-=============================== */
-
-/* Base icon animation */
-.hex-icon {
-  font-size: 3.2rem;
-  margin-bottom: 1rem;
-  color: #2563eb;
-  transition: transform 0.4s ease, color 0.4s ease;
-}
-
-/* Hover: lift + rotate slightly */
-.hex:hover .hex-icon {
-  transform: scale(1.15) rotate(6deg);
-  color: #1d4ed8;
-}
-
-/* Continuous soft pulse */
-@keyframes softPulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-/* Apply pulse only to course icons */
-.hex:not(.center-hex) .hex-icon {
-  animation: softPulse 3s infinite ease-in-out;
-}
-
-/* Center EDOT icon stronger */
-.center-icon {
-  font-size: 4rem;
-  color: white;
-  animation: softPulse 2s infinite ease-in-out;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .hex-container {
-    width: auto;
-    height: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 2rem;
-  }
-
-  .hex {
-    position: static;
-    clip-path: none;
-    border-radius: 12px;
-    border-block-color: var(--accent);
-  }
-}
-
-/* ===============================
-EDOT COURSES (1–9) – ALL IN ONE
-=============================== */
-
-.edot-courses {
-  padding: 6rem 2rem;
-  background: #f8fafc;
-}
-
-.edot-courses h2 {
   text-align: center;
-  font-size: 3rem;
-  margin-bottom: 1rem;
 }
 
-.edot-courses p {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 4rem;
-  font-size: 1.5rem;
-  color: #475569;
+.footer-logo {
+  width: 60px;
+  margin-bottom: 10px;
 }
 
-/* Course grid */
-.course-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2.5rem;
+.footer-links {
+  margin-top: 10px;
 }
 
-/* Course card (used for all 9) */
-.course-card {
-  background: white;
-  padding: 2.5rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.course-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
-}
-
-/* Icon */
-.course-card .icon {
-  font-size: 3.8rem;
-  margin-bottom: 1.2rem;
-  color: #2563eb;
-}
-
-/* Title */
-.course-card h3 {
-  font-size: 1.9rem;
-  margin-bottom: 1rem;
-  color: #0f172a;
-}
-
-/* Description */
-.course-card p {
-  font-size: 1.4rem;
-  color: #475569;
-  line-height: 1.6;
-}
-
-/* Button */
-.course-card button {
-  margin-top: 1.6rem;
-  padding: 0.7rem 1.8rem;
-  border: none;
-  border-radius: 2rem;
-  background: #2563eb;
+.footer-links a {
   color: white;
-  font-size: 1.4rem;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.course-card button:hover {
-  background: #1d4ed8;
-  transform: translateY(-3px);
-}
-
-/* ===============================
-OPTIONAL: COURSE COLOR VARIATION
-(Still ONE system for all 9)
-=============================== */
-
-.math .icon {
-  color: #2563eb;
-}
-
-.english .icon {
-  color: #16a34a;
-}
-
-.physics .icon {
-  color: #9333ea;
-}
-
-.chemistry .icon {
-  color: #dc2626;
-}
-
-.biology .icon {
-  color: #15803d;
-}
-
-.aptitude .icon {
-  color: #ca8a04;
-}
-
-.social .icon {
-  color: #0284c7;
-}
-
-.programming .icon {
-  color: #0f172a;
-}
-
-.support .icon {
-  color: #7c3aed;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .edot-courses h2 {
-    font-size: 2.4rem;
-  }
-
-  .course-card {
-    padding: 2rem;
-  }
+  margin: 0 10px;
+  text-decoration: none;
 }
