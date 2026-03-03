@@ -45,3 +45,27 @@ document.querySelectorAll(".sidebar a").forEach(link => {
     link.classList.add("active");
   });
 });
+
+const notifications = JSON.parse(localStorage.getItem("edotNotifications")) || [
+  { text: "Welcome to EDOT!", read: false },
+  { text: "New Mathematics lesson added", read: false }
+];
+
+const list = document.getElementById("notificationList");
+
+function renderNotifications() {
+  list.innerHTML = "";
+  notifications.forEach((n, i) => {
+    const li = document.createElement("li");
+    li.textContent = n.text;
+    li.className = n.read ? "" : "unread";
+    li.onclick = () => {
+      notifications[i].read = true;
+      localStorage.setItem("edotNotifications", JSON.stringify(notifications));
+      renderNotifications();
+    };
+    list.appendChild(li);
+  });
+}
+
+renderNotifications();

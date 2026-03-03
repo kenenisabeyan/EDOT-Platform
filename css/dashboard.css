@@ -35,6 +35,29 @@ body.dark .sidebar {
   cursor: pointer;
 }
 
+
+.notifications {
+  margin-top: 3rem;
+}
+
+.notifications ul {
+  list-style: none;
+  padding: 0;
+}
+
+.notifications li {
+  background: #f1f5f9;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.notifications li.unread {
+  background: #dbeafe;
+  font-weight: 600;
+}
+
 /* SIDEBAR */
 .sidebar {
   width: 24rem;
