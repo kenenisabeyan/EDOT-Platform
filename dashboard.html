@@ -4,27 +4,59 @@
 <head>
   <meta charset="UTF-8">
   <title>Dashboard | EDOT</title>
+
   <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" href="css/dashboard.css">
 </head>
 
 <body>
 
-  <nav class="navbar">EDOT Dashboard</nav>
+  <!-- NAVBAR -->
+  <nav class="navbar dashboard-nav">
+    <h2 class="logo">EDOT</h2>
+    <button id="menuBtn">☰</button>
+  </nav>
 
+  <!-- DASHBOARD -->
   <section class="dashboard">
-    <aside class="sidebar">
-      <a href="#">📚 Courses</a>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <a class="active" href="#">📊 Dashboard</a>
+      <a href="#">📚 My Courses</a>
+      <a href="#">📝 Assignments</a>
       <a href="#">👤 Profile</a>
       <a href="#">⚙ Settings</a>
+      <a href="#">🚪 Logout</a>
     </aside>
 
+    <!-- MAIN CONTENT -->
     <main class="dashboard-content">
-      <h2>Welcome back 👋</h2>
-      <p>Your learning progress appears here.</p>
+      <h1>Welcome back, Student 👋</h1>
+      <p class="subtitle">Here is your learning progress</p>
+
+      <!-- STATS -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>📚 Courses</h3>
+          <p>6 Enrolled</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>✅ Completed</h3>
+          <p>3 Courses</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>⏳ In Progress</h3>
+          <p>3 Courses</p>
+        </div>
+      </div>
     </main>
+
   </section>
 
+  <script src="js/dashboard.js"></script>
 </body>
 
 </html>
