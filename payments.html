@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>EDOT | Course Payment</title>
+  <link rel="stylesheet" href="css/payments.css">
+</head>
+
+<body>
+
+  <div class="payment-container">
+    <h1>Enroll in Course</h1>
+    <p class="course-name">Course: Web Development Basics</p>
+    <p class="price">Price: 500 ETB</p>
+
+    <div class="payment-methods">
+      <h3>Select Payment Method</h3>
+
+      <label>
+        <input type="radio" name="payment" value="telebirr">
+        TeleBirr
+      </label>
+
+      <label>
+        <input type="radio" name="payment" value="cbebirr">
+        CBE Birr
+      </label>
+
+      <label>
+        <input type="radio" name="payment" value="bank">
+        Bank Transfer
+      </label>
+    </div>
+
+    <button onclick="makePayment()">Pay & Enroll</button>
+
+    <p id="status"></p>
+  </div>
+
+  <script src="js/payments.js"></script>
+</body>
+
+</html>
