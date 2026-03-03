@@ -1,0 +1,24 @@
+.dashboard {
+  display: flex;
+  min-height: calc(100vh - 8rem);
+}
+
+.sidebar {
+  width: 22rem;
+  background: #1c7ed6;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sidebar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.6rem;
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 4rem;
+}
