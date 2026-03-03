@@ -15,6 +15,10 @@ localStorage.setItem("edotProgress", JSON.stringify(progressData));
 const menuBtn = document.getElementById("menuBtn");
 const sidebar = document.getElementById("sidebar");
 
+document.getElementById("mathProgress").style.width = progressData.math + "%";
+document.getElementById("englishProgress").style.width = progressData.english + "%";
+document.getElementById("programmingProgress").style.width = progressData.programming + "%";
+
 menuBtn.addEventListener("click", () => {
   sidebar.classList.toggle("show");
 });
