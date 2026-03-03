@@ -64,3 +64,14 @@ if (registerForm) {
     this.reset();
   });
 }
+
+// Highlight active page in navbar
+const links = document.querySelectorAll(".nav-links a");
+const currentPage = location.pathname.split("/").pop();
+
+links.forEach(link => {
+  if (link.getAttribute("href") === currentPage) {
+    link.style.color = "#1f3c88";
+    link.style.fontWeight = "700";
+  }
+});
