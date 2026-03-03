@@ -19,6 +19,21 @@ document.getElementById("mathProgress").style.width = progressData.math + "%";
 document.getElementById("englishProgress").style.width = progressData.english + "%";
 document.getElementById("programmingProgress").style.width = progressData.programming + "%";
 
+const toggle = document.getElementById("darkToggle");
+
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark");
+}
+
+toggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+
+  localStorage.setItem(
+    "theme",
+    document.body.classList.contains("dark") ? "dark" : "light"
+  );
+});
+
 menuBtn.addEventListener("click", () => {
   sidebar.classList.toggle("show");
 });

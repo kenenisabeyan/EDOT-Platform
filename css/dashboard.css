@@ -14,6 +14,19 @@
   color: white;
 }
 
+body.dark {
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+body.dark .stat-card,
+body.dark .progress-bar {
+  background: #1e293b;
+}
+
+body.dark .sidebar {
+  background: #020617;
+}
 #menuBtn {
   font-size: 2.4rem;
   background: none;
