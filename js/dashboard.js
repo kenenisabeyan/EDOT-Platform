@@ -4,6 +4,14 @@ if (!user || !user.loggedIn) {
   window.location.href = "login.html";
 }
 
+const progressData = JSON.parse(localStorage.getItem("edotProgress")) || {
+  math: 40,
+  english: 25,
+  programming: 10
+};
+
+localStorage.setItem("edotProgress", JSON.stringify(progressData));
+
 const menuBtn = document.getElementById("menuBtn");
 const sidebar = document.getElementById("sidebar");
 
