@@ -69,3 +69,32 @@ function renderNotifications() {
 }
 
 renderNotifications();
+
+const tasks = JSON.parse(localStorage.getItem("edotTasks")) || [];
+const taskList = document.getElementById("taskList");
+
+function renderTasks() {
+  taskList.innerHTML = "";
+  tasks.forEach((t, i) => {
+    const li = document.createElement("li");
+    li.textContent = t;
+    li.onclick = () => {
+      tasks.splice(i, 1);
+      localStorage.setItem("edotTasks", JSON.stringify(tasks));
+      renderTasks();
+    };
+    taskList.appendChild(li);
+  });
+}
+
+document.getElementById("addTask").onclick = () => {
+  const val = document.getElementById("taskInput").value;
+  if (val) {
+    tasks.push(val);
+    localStorage.setItem("edotTasks", JSON.stringify(tasks));
+    renderTasks();
+    taskInput.value = "";
+  }
+};
+
+renderTasks();
