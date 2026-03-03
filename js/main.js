@@ -75,3 +75,26 @@ links.forEach(link => {
     link.style.fontWeight = "700";
   }
 });
+
+document.addEventListener("submit", e => {
+  if (e.target.classList.contains("auth-form")) {
+    e.preventDefault();
+
+    const inputs = e.target.querySelectorAll("input");
+    let valid = true;
+
+    inputs.forEach(input => {
+      if (input.value.trim() === "") {
+        input.style.borderColor = "red";
+        valid = false;
+      } else {
+        input.style.borderColor = "#dee2e6";
+      }
+    });
+
+    if (valid) {
+      alert("Form submitted successfully ✅");
+      e.target.reset();
+    }
+  }
+});
