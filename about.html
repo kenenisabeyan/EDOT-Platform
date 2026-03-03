@@ -11,30 +11,41 @@
 
   <!-- About Page CSS -->
   <link rel="stylesheet" href="./css/about.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/app.css">
 </head>
 
 <body>
 
   <!-- ================= HEADER ================= -->
-  <header class="header">
-    <nav class="navbar container">
-      <h1 class="logo">EDOT</h1>
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="assets/images/edot-logos.png" alt="EDOT Logo">
+        <span>EDOT</span>
+      </a>
+  
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a class="active" href="about.html">About</a></li>
         <li><a href="courses.html">Courses</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+  
+      <div class="nav-actions">
+        <a href="login.html" class="btn-outline">Login</a>
+        <a href="register.html" class="btn-primary">Register</a>
+      </div>
     </nav>
   </header>
 
   <!-- ================= HERO ================= -->
-  <section class="about-hero">
+  <!-- <section class="about-hero">
     <div class="container">
       <h1>About EDOT Platform</h1>
       <p>Education Digital Online Tutorials for modern learners</p>
     </div>
-  </section>
+  </section> -->
 
   <!-- ================= ABOUT CONTENT ================= -->
   <section class="about-section container">
@@ -68,13 +79,24 @@
     </div>
   </section>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="footer">
-    <p>© 2026 EDOT Platform. All rights reserved.</p>
-  </footer>
-
+ 
   <script src="./js/about.js"></script>
+  <script src="js/main.js"></script>
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <img src="assets/images/edot-logos.png" alt="EDOT Logo" class="footer-logo">
 
+    <p>© 2026 EDOT Platform. All rights reserved.</p>
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
 </body>
 
 </html>

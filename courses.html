@@ -13,23 +13,32 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="./css/courses.css" />
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/app.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
 
   <!-- NAVBAR -->
-  <header>
-    <nav class="navbar container">
-      <a href="index.html">
-        <img class="logo-md" src="assets/images/edot-logos.png" alt="EDOT Logo">
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="assets/images/edot-logos.png" alt="EDOT Logo">
+        <span>EDOT</span>
       </a>
-
-      <ul class="nav-btn-container">
-        <li><a class="btn btn-primary-outline" href="index.html">Home</a></li>
-        <li><a class="btn btn-primary-outline" href="courses.html">Courses</a></li>
-        <li><a class="btn btn-primary-outline" href="contact.html">Contact</a></li>
+  
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
+  
+      <div class="nav-actions">
+        <a href="login.html" class="btn-outline">Login</a>
+        <a href="register.html" class="btn-primary">Register</a>
+      </div>
     </nav>
   </header>
 
@@ -109,9 +118,22 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <p class="small-text">© 2026 EDOT Platform. All rights reserved.</p>
+  <footer class="site-footer">
+    <div class="footer-content">
+      <img src="assets/images/edot-logos.png" alt="EDOT Logo" class="footer-logo">
+  
+      <p>© 2026 EDOT Platform. All rights reserved.</p>
+  
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
   </footer>
+
+  <script src="js/main.js"></script>
 
 </body>
 
