@@ -10,6 +10,13 @@
   --border-radius: 12px;
 }
 
+:root {
+  --bg: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+}
 /* =========================
    GLOBAL RESET
 ========================= */
