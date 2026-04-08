@@ -2,33 +2,11 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import db from '../../config/db.js';
 
-// Setup users table if not exists
-const initDB = async () => {
-    try {
-        await db.query(`
-            CREATE TABLE IF NOT EXISTS users (
-                id INT AUTO_INCREMENT PRIMARY KEY,
-                fullName VARCHAR(255) NOT NULL,
-                email VARCHAR(255) UNIQUE NOT NULL,
-                password VARCHAR(255) NOT NULL,
-                role ENUM('student', 'tutor', 'admin') DEFAULT 'student',
-                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-            )
-        `);
-        console.log('✅ Users table ready');
-    } catch (error) {
-        console.error('❌ Error initializing database tables:', error);
-    }
-};
-
-// Initialize the database tables silently on boot
-initDB();
-
 export const register = async (req, res) => {
     try {
-        const { fullName, email, password } = req.body;
+        const { name, email, password, role } = req.body;
 
-        if (!fullName || !email || !password) {
+        if (!name || !email || !password) {
             return res.status(400).json({ message: 'Please provide all required fields' });
         }
 
@@ -42,10 +20,12 @@ export const register = async (req, res) => {
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
 
+        const assignRole = role === 'instructor' ? 'instructor' : 'student';
+
         // Insert new user
         const [result] = await db.query(
-            'INSERT INTO users (fullName, email, password) VALUES (?, ?, ?)',
-            [fullName, email, hashedPassword]
+            'INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, ?)',
+            [name, email, hashedPassword, assignRole]
         );
 
         res.status(201).json({ message: 'User registered successfully', userId: result.insertId });
@@ -89,7 +69,7 @@ export const login = async (req, res) => {
             token,
             user: {
                 id: user.id,
-                fullName: user.fullName,
+                name: user.name,
                 email: user.email,
                 role: user.role
             }

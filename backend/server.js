@@ -7,10 +7,17 @@ import db from './config/db.js';
 import authRoutes from './src/routes/authRoutes.js';
 import courseRoutes from './src/routes/courseRoutes.js';
 import userRoutes from './src/routes/userRoutes.js';
+import lessonRoutes from './src/routes/lessonRoutes.js';
+import enrollRoutes from './src/routes/enrollRoutes.js';
+
+import initDB from './src/models/initDB.js';
 
 dotenv.config();
 
 const app = express();
+
+// Initialize DB tables
+initDB();
 
 // Middleware
 app.use(cors());
@@ -35,6 +42,8 @@ app.get('/api/health', async (req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/courses', courseRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/lessons', lessonRoutes);
+app.use('/api/enroll', enrollRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

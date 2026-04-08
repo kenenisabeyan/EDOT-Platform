@@ -1,15 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;600;700&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #2563EB;
+  --color-secondary: #0F172A;
+  --color-accent: #22C55E;
+  --color-background: #F8FAFC;
+  --color-text: #1E293B;
+  --color-border: #E2E8F0;
+  
+  --font-poppins: 'Poppins', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  
+  --radius-button: 8px;
+  --radius-card: 12px;
+}
 
 @layer base {
   body {
-    @apply bg-background text-textColor font-inter antialiased m-0 p-0;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-inter);
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-poppins font-bold;
+    font-family: var(--font-poppins);
+    font-weight: 700;
   }
   h1 { font-size: 40px; }
   h2 { font-size: 32px; }
@@ -20,12 +39,12 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-primary text-white px-[24px] py-[12px] rounded-button font-inter font-medium hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-1 shadow-md;
+    @apply bg-primary text-white px-6 py-3 rounded-[8px] font-inter font-medium hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-1 shadow-md;
   }
   .btn-outline {
-    @apply border-2 border-primary text-primary px-[24px] py-[12px] rounded-button font-inter font-medium hover:bg-primary hover:text-white transition-all duration-300;
+    @apply border-2 border-primary text-primary px-6 py-3 rounded-[8px] font-inter font-medium hover:bg-primary hover:text-white transition-all duration-300;
   }
   .card {
-    @apply bg-white border border-borderColor rounded-card shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden;
+    @apply bg-white border border-border rounded-[12px] shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden;
   }
 }
