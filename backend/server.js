@@ -3,6 +3,9 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import db from './config/db.js';
 
+// Route Imports
+import authRoutes from './src/routes/authRoutes.js';
+
 dotenv.config();
 
 const app = express();
@@ -26,8 +29,8 @@ app.get('/api/health', async (req, res) => {
     }
 });
 
-// Example route placeholder
-app.use('/api/users', (req, res) => res.json([{ id: 1, name: 'Kenenisa Beyan' }]));
+// Mount Routes
+app.use('/api/auth', authRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
