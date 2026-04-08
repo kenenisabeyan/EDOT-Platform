@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import axios from 'axios';
+import PageHeader from '../components/ui/PageHeader';
+import Card, { CardBody } from '../components/ui/Card';
+import Button from '../components/ui/Button';
 
 const AttendancePage = () => {
     // These states would ideally come from your auth context or global state
@@ -114,45 +117,45 @@ const AttendancePage = () => {
     const studentsList = students.filter(s => s.role === 'student');
 
     const renderTable = (users, title) => (
-        <div className="mb-8">
-            <h2 className="text-xl font-semibold text-secondary mb-4">{title}</h2>
-            <div className="overflow-x-auto">
+        <div className="mb-8 last:mb-0">
+            <h2 className="text-xl font-bold text-gray-900 mb-4 px-2">{title}</h2>
+            <Card hover={false} className="overflow-x-auto overflow-hidden">
                 <table className="w-full text-left border-collapse">
-                    <thead>
-                        <tr className="border-b border-gray-200">
-                            <th className="py-3 px-4 font-semibold text-gray-600">Name</th>
-                            <th className="py-3 px-4 font-semibold text-gray-600 text-center">Present</th>
-                            <th className="py-3 px-4 font-semibold text-gray-600 text-center">Late</th>
-                            <th className="py-3 px-4 font-semibold text-gray-600 text-center">Absent</th>
+                    <thead className="bg-gray-50 border-b border-gray-100">
+                        <tr>
+                            <th className="py-4 px-6 font-semibold text-gray-600 text-sm tracking-wider uppercase">Name</th>
+                            <th className="py-4 px-6 font-semibold text-gray-600 text-sm tracking-wider uppercase text-center w-28">Present</th>
+                            <th className="py-4 px-6 font-semibold text-gray-600 text-sm tracking-wider uppercase text-center w-28">Late</th>
+                            <th className="py-4 px-6 font-semibold text-gray-600 text-sm tracking-wider uppercase text-center w-28">Absent</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="divide-y divide-gray-100">
                         {users.map(user => (
-                            <tr key={user.id} className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                                <td className="py-3 px-4 text-secondary font-medium">{user.name}</td>
-                                <td className="py-3 px-4 text-center">
+                            <tr key={user.id} className="hover:bg-blue-50/50 transition-colors">
+                                <td className="py-4 px-6 text-gray-900 font-medium">{user.name}</td>
+                                <td className="py-4 px-6 text-center">
                                     <input 
                                         type="radio" 
                                         name={`status-${user.id}`} 
-                                        className="w-4 h-4 text-primary focus:ring-primary cursor-pointer"
+                                        className="w-5 h-5 text-blue-600 focus:ring-blue-600 cursor-pointer border-gray-300"
                                         checked={attendance[user.id] === 'present'}
                                         onChange={() => handleStatusChange(user.id, 'present')}
                                     />
                                 </td>
-                                <td className="py-3 px-4 text-center">
+                                <td className="py-4 px-6 text-center">
                                     <input 
                                         type="radio" 
                                         name={`status-${user.id}`} 
-                                        className="w-4 h-4 text-amber-500 focus:ring-amber-500 cursor-pointer"
+                                        className="w-5 h-5 text-amber-500 focus:ring-amber-500 cursor-pointer border-gray-300"
                                         checked={attendance[user.id] === 'late'}
                                         onChange={() => handleStatusChange(user.id, 'late')}
                                     />
                                 </td>
-                                <td className="py-3 px-4 text-center">
+                                <td className="py-4 px-6 text-center">
                                     <input 
                                         type="radio" 
                                         name={`status-${user.id}`} 
-                                        className="w-4 h-4 text-red-500 focus:ring-red-500 cursor-pointer"
+                                        className="w-5 h-5 text-red-600 focus:ring-red-600 cursor-pointer border-gray-300"
                                         checked={attendance[user.id] === 'absent'}
                                         onChange={() => handleStatusChange(user.id, 'absent')}
                                     />
@@ -161,22 +164,23 @@ const AttendancePage = () => {
                         ))}
                     </tbody>
                 </table>
-            </div>
+            </Card>
         </div>
     );
 
     return (
         <div className="min-h-screen flex flex-col bg-background">
             <Navbar />
-            <div className="max-w-5xl mx-auto w-full px-4 py-8 flex-1">
-                <div className="bg-white rounded-xl shadow-sm p-6 border border-border">
-                    <h1 className="text-2xl font-semibold text-secondary mb-6">Manage Attendance</h1>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <main className="flex-grow max-w-7xl mx-auto px-6 py-8 w-full">
+                <PageHeader title="Attendance Management" subtitle="Track daily statuses for students and staff quickly and accurately." />
+
+                <Card hover={false} className="mb-10">
+                  <CardBody>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div>
                             <label className="block text-sm font-medium text-gray-700 mb-2">Select Course</label>
                             <select 
-                                className="w-full border border-gray-300 rounded-lg p-2.5 focus:ring-primary focus:border-primary"
+                                className="w-full border border-gray-300 rounded-lg p-2.5 focus:ring-blue-600 focus:border-blue-600 bg-white"
                                 value={selectedCourse}
                                 onChange={(e) => setSelectedCourse(e.target.value)}
                             >
@@ -189,14 +193,14 @@ const AttendancePage = () => {
                         <div>
                             <label className="block text-sm font-medium text-gray-700 mb-2">Select Section</label>
                             <select 
-                                className="w-full border border-gray-300 rounded-lg p-2.5 focus:ring-primary focus:border-primary"
+                                className="w-full border border-gray-300 rounded-lg p-2.5 focus:ring-blue-600 focus:border-blue-600 bg-white disabled:bg-gray-50 disabled:text-gray-500"
                                 value={selectedSection}
                                 onChange={(e) => setSelectedSection(e.target.value)}
                                 disabled={!selectedCourse}
                             >
                                 <option value="">-- Choose a section --</option>
                                 {sections.map(s => (
-                                    <option key={s.id} value={s.id}>{s.name} - {s.schedule}</option>
+                                    <option key={s.id} value={s.id}>{s.name} {s.schedule ? `- ${s.schedule}` : ''}</option>
                                 ))}
                             </select>
                         </div>
@@ -204,33 +208,43 @@ const AttendancePage = () => {
                             <label className="block text-sm font-medium text-gray-700 mb-2">Date</label>
                             <input 
                                 type="date" 
-                                className="w-full border border-gray-300 rounded-lg p-2.5 focus:ring-primary focus:border-primary"
+                                className="w-full border border-gray-300 rounded-lg p-2.5 focus:ring-blue-600 focus:border-blue-600 bg-white"
                                 value={date}
                                 onChange={(e) => setDate(e.target.value)}
                             />
                         </div>
-                    </div>
+                      </div>
+                  </CardBody>
+                </Card>
 
-                    {isLoading ? (
-                        <div className="text-center py-8 text-gray-500">Loading user list...</div>
-                    ) : students.length > 0 ? (
-                        <>
-                            {instructorsList.length > 0 && renderTable(instructorsList, 'Instructor(s)')}
-                            {studentsList.length > 0 && renderTable(studentsList, 'Students')}
-                            
-                            <div className="mt-8 flex justify-end">
-                                <button className="btn-primary px-8 py-3 rounded-lg shadow-sm font-medium text-white transition-transform active:scale-95" onClick={handleSave}>
-                                    Save Attendance Records
-                                </button>
-                            </div>
-                        </>
-                    ) : selectedSection ? (
-                        <div className="text-center py-8 text-gray-500">No users found in this section.</div>
-                    ) : (
-                        <div className="text-center py-8 text-gray-400">Select a course and section to load students.</div>
-                    )}
-                </div>
-            </div>
+                {isLoading ? (
+                    <div className="text-center py-16 text-gray-500">
+                        <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-blue-600 mx-auto mb-4"></div>
+                        <p>Loading user list...</p>
+                    </div>
+                ) : students.length > 0 ? (
+                    <div className="animate-fade-in mb-10">
+                        {instructorsList.length > 0 && renderTable(instructorsList, 'Instructor(s)')}
+                        {studentsList.length > 0 && renderTable(studentsList, 'Students')}
+                        
+                        <div className="mt-8 flex justify-end">
+                            <Button variant="primary" onClick={handleSave} className="px-8 py-3 rounded-lg shadow-md font-bold text-lg">
+                                Save Attendance Records
+                            </Button>
+                        </div>
+                    </div>
+                ) : selectedSection ? (
+                    <Card hover={false} className="py-16 text-center">
+                         <h3 className="text-lg font-medium text-gray-900 mb-2">No users found</h3>
+                         <p className="text-gray-500">There are currently no users assigned to this section.</p>
+                    </Card>
+                ) : (
+                    <Card hover={false} className="py-16 text-center">
+                         <h3 className="text-lg font-medium text-gray-900 mb-2">Select a Course and Section</h3>
+                         <p className="text-gray-500">Please choose a course and section above to view the attendance roster.</p>
+                    </Card>
+                )}
+            </main>
         </div>
     );
 };

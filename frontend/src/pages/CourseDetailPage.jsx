@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
-import { Clock, PlayCircle, Star, User, BookOpen, CheckCircle } from 'lucide-react';
+import { Clock, PlayCircle, Star, User, BookOpen, CheckCircle, ArrowLeft } from 'lucide-react';
+import Card, { CardBody } from '../components/ui/Card';
+import Button from '../components/ui/Button';
 
 const CourseDetailPage = () => {
   const { id } = useParams();
@@ -44,105 +46,107 @@ const CourseDetailPage = () => {
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
 
-      {/* Header section with background */}
-      <div className="bg-secondary text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-12 items-start">
-            <div className="lg:w-2/3">
-              <span className="bg-primary/20 text-blue-300 border border-blue-400/30 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-6 inline-block">
+      {/* Main Content Area replacing messy top header */}
+      <main className="flex-grow max-w-7xl mx-auto px-6 py-8 w-full gap-8 grid grid-cols-1 lg:grid-cols-3">
+        <div className="lg:col-span-2 space-y-10">
+          <Link to="/courses" className="inline-flex items-center gap-2 text-blue-600 font-medium hover:underline mb-4">
+              <ArrowLeft size={16} /> Back to Courses
+          </Link>
+          
+          <div>
+              <span className="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4 inline-block">
                 {course.category}
               </span>
-              <h1 className="text-4xl md:text-5xl font-poppins font-bold mb-6 text-white">{course.title}</h1>
-              <p className="text-xl text-gray-300 mb-8">{course.description}</p>
+              <h1 className="text-4xl md:text-5xl font-poppins font-bold mb-6 text-gray-900">{course.title}</h1>
+              <p className="text-xl text-gray-600 mb-8">{course.description}</p>
               
-              <div className="flex flex-wrap items-center gap-6 text-gray-300">
+              <div className="flex flex-wrap items-center gap-6 text-gray-700">
                 <div className="flex items-center gap-2">
-                  <Star className="text-yellow-400" fill="currentColor" size={20} />
-                  <span className="font-medium text-white">{course.rating} Rating</span>
+                  <Star className="text-amber-500" fill="currentColor" size={20} />
+                  <span className="font-medium text-gray-900">{course.rating} Rating</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <User size={20} />
+                  <User size={20} className="text-gray-400" />
                   <span>{course.students.toLocaleString()} Students</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Clock size={20} />
+                  <Clock size={20} className="text-gray-400" />
                   <span>{course.duration}</span>
                 </div>
               </div>
-            </div>
+          </div>
 
-            {/* Sticky Enrollment Card */}
-            <div className="lg:w-1/3 w-full">
-              <div className="bg-white rounded-[12px] p-2 shadow-xl border border-border mt-0 lg:-mt-24 sticky top-24">
-                <div className="relative h-48 md:h-64 rounded-[8px] overflow-hidden mb-6">
+          {/* Instructor Section */}
+          <section className="mb-10">
+            <h2 className="text-2xl mb-6 font-bold text-gray-900">Instructor</h2>
+            <Card hover={false}>
+              <CardBody className="flex gap-6 items-start">
+                  <div className="bg-blue-100 rounded-full h-20 w-20 flex items-center justify-center flex-shrink-0 text-blue-600 font-bold text-2xl">
+                    {course.instructor_name.charAt(0)}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2 text-gray-900">{course.instructor_name}</h3>
+                    <p className="text-gray-600 mb-4">{course.instructor_bio}</p>
+                    <div className="flex gap-4 text-sm text-blue-600 font-medium">
+                      <span className="flex items-center gap-1"><Star size={16} /> 4.8 Instructor Rating</span>
+                      <span className="flex items-center gap-1"><User size={16} /> 45,000 Students</span>
+                    </div>
+                  </div>
+              </CardBody>
+            </Card>
+          </section>
+
+          {/* Curriculum Section */}
+          <section className="mb-10">
+            <h2 className="text-2xl mb-6 font-bold text-gray-900">Course Curriculum</h2>
+            <Card hover={false}>
+              <div className="flex flex-col">
+                  {course.lessons.map((lesson, idx) => (
+                    <div key={lesson.id} className={`p-5 flex items-center justify-between hover:bg-gray-50 transition-colors ${idx !== course.lessons.length - 1 ? 'border-b border-gray-100' : ''}`}>
+                      <div className="flex items-center gap-4">
+                        <PlayCircle className="text-gray-400" size={20} />
+                        <span className="font-medium text-gray-700">{lesson.title}</span>
+                      </div>
+                      <span className="text-sm text-gray-500 flex items-center gap-2">
+                        <Clock size={14} /> {lesson.duration}
+                      </span>
+                    </div>
+                  ))}
+              </div>
+            </Card>
+          </section>
+        </div>
+
+        {/* Sticky Enrollment Card Sidebar */}
+        <div className="lg:col-span-1 w-full">
+            <Card hover={false} className="sticky top-24 shadow-md border-gray-200">
+                <div className="relative h-56 w-full overflow-hidden">
                   <img src={course.thumbnail} alt={course.title} className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
                     <PlayCircle size={64} className="text-white opacity-80 hover:opacity-100 cursor-pointer transition-opacity" />
                   </div>
                 </div>
-                <div className="px-6 pb-6">
-                  <div className="text-3xl font-bold text-secondary mb-6">$49.99</div>
-                  <button onClick={handleEnroll} className="btn-primary w-full py-4 text-lg mb-4">Enroll Now</button>
+                <CardBody>
+                  <div className="text-3xl font-bold text-gray-900 mb-6">$49.99</div>
+                  <Button onClick={handleEnroll} variant="primary" className="w-full py-3 mb-4 text-lg font-bold">
+                    Enroll Now
+                  </Button>
                   <p className="text-center text-sm text-gray-500 mb-6">30-Day Money-Back Guarantee</p>
                   
-                  <div className="space-y-3">
-                    <h4 className="font-semibold text-secondary">This course includes:</h4>
+                  <div className="space-y-4 pt-4 border-t border-gray-100">
+                    <h4 className="font-bold text-gray-900">This course includes:</h4>
                     <div className="flex items-center gap-3 text-sm text-gray-600">
-                      <PlayCircle size={16} /> {course.duration} on-demand video
+                      <PlayCircle size={18} className="text-gray-400" /> {course.duration} on-demand video
                     </div>
                     <div className="flex items-center gap-3 text-sm text-gray-600">
-                      <BookOpen size={16} /> 15 downloadable resources
+                      <BookOpen size={18} className="text-gray-400" /> 15 downloadable resources
                     </div>
                     <div className="flex items-center gap-3 text-sm text-gray-600">
-                      <CheckCircle size={16} /> Certificate of completion
+                      <CheckCircle size={18} className="text-gray-400" /> Certificate of completion
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Content */}
-      <main className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full grid grid-cols-1 lg:grid-cols-3 gap-12">
-        <div className="lg:col-span-2 space-y-12">
-          
-          {/* Instructor Section */}
-          <section className="bg-white p-8 rounded-[12px] border border-border shadow-sm">
-            <h2 className="text-2xl mb-6 text-secondary">Instructor</h2>
-            <div className="flex gap-6 items-start">
-              <div className="bg-blue-100 rounded-full h-20 w-20 flex items-center justify-center flex-shrink-0 text-primary font-bold text-2xl">
-                {course.instructor_name.charAt(0)}
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">{course.instructor_name}</h3>
-                <p className="text-gray-600 mb-4">{course.instructor_bio}</p>
-                <div className="flex gap-4 text-sm text-primary font-medium">
-                  <span className="flex items-center gap-1"><Star size={16} /> 4.8 Instructor Rating</span>
-                  <span className="flex items-center gap-1"><User size={16} /> 45,000 Students</span>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Curriculum Section */}
-          <section>
-            <h2 className="text-2xl mb-6 text-secondary">Course Curriculum</h2>
-            <div className="bg-white rounded-[12px] border border-border shadow-sm overflow-hidden">
-              {course.lessons.map((lesson, idx) => (
-                <div key={lesson.id} className={`p-4 flex items-center justify-between hover:bg-gray-50 transition-colors ${idx !== course.lessons.length - 1 ? 'border-b border-border' : ''}`}>
-                  <div className="flex items-center gap-4">
-                    <PlayCircle className="text-primary" size={20} />
-                    <span className="font-medium text-gray-800">{lesson.title}</span>
-                  </div>
-                  <span className="text-sm text-gray-500 flex items-center gap-2">
-                    <Clock size={14} /> {lesson.duration}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </section>
+                </CardBody>
+            </Card>
         </div>
       </main>
     </div>
