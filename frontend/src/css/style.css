@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us | EDOT</title>
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+<section class="contact-section">
+  <div class="contact-container">
+
+    <div class="contact-info">
+      <h2>Contact EDOT</h2>
+      <p>
+        Have questions or need support?  
+        Reach out to the EDOT team — we’re here to help your learning journey.
+      </p>
+
+      <ul>
+        <li>📍 Ethiopia</li>
+        <li>📧 edotplatform@gmail.com</li>
+        <li>📞 +251 9XX XXX XXX</li>
+      </ul>
+    </div>
+
+    <form class="contact-form" id="contactForm">
+      <h3>Send Message</h3>
+
+      <input type="text" id="name" placeholder="Your Name">
+      <input type="email" id="email" placeholder="Your Email">
+      <textarea id="message" placeholder="Your Message"></textarea>
+
+      <button type="submit">Send Message</button>
+      <p class="form-status" id="formStatus"></p>
+    </form>
+
+  </div>
+</section>
+
+<script src="contact.js"></script>
+</body>
+</html>

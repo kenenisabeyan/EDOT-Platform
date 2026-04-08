@@ -1,3 +1,5 @@
+JSON.parse(localStorage.getItem("edotUser"));
+
 document.getElementById("loginForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -13,3 +15,15 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     window.location.href = "dashboard.html";
   }
 });
+
+function logout() {
+  localStorage.removeItem("edotUser");
+  window.location.href = "login.html";
+}
+
+localStorage.setItem("edotUser", JSON.stringify({
+  email: email,
+  name: email.split("@")[0], // temporary name
+  loggedIn: true,
+  loginTime: Date.now()
+}));

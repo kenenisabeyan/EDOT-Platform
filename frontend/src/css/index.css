@@ -1,0 +1,284 @@
+/* ===============================
+   EDOT HOME PAGE STYLES (ONLY)
+=============================== */
+
+/* ========= VARIABLES ========= */
+:root {
+  --primary: #339af0;
+  --primary-dark: #1c7ed6;
+  --secondary: #9775fa;
+  --accent: #ff922b;
+
+  --grey-dark: #212529;
+  --grey: #495057;
+  --grey-light: #f1f3f5;
+
+  --white: #ffffff;
+  --font-main: "Poppins", sans-serif;
+}
+
+/* ========= RESET ========= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========= BASE ========= */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-main);
+  font-size: 1.6rem;
+  color: var(--grey);
+  line-height: 1.6;
+  background: var(--white);
+}
+
+/* ========= CONTAINER ========= */
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ========= NAVBAR ========= */
+.navbar {
+  height: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ========= LOGO ========= */
+.logo-md {
+  width: 10rem;
+}
+
+/* ========= NAV BUTTONS ========= */
+.nav-btn-container {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+/* ========= BUTTONS ========= */
+.btn {
+  padding: 1.4rem 3rem;
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn-primary-outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-primary-outline:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.btn-secondary {
+  background: var(--secondary);
+  color: var(--white);
+}
+
+/* ========= HERO SECTION ========= */
+.hero-section {
+  height: calc(100vh - 10rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-heading {
+  font-size: 6rem;
+  font-weight: 700;
+  color: var(--grey-dark);
+  margin-bottom: 2rem;
+}
+
+.hero-paragragh {
+  font-size: 2rem;
+  max-width: 70rem;
+  margin-bottom: 4rem;
+}
+
+/* ========= HERO BUTTONS ========= */
+.hero-btn-container {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+/* ========= HIGHLIGHTS ========= */
+.highlight {
+  padding: 0.4rem 1rem;
+  border-radius: 0.4rem;
+  color: var(--white);
+}
+
+.highlight-secondary {
+  background: var(--secondary);
+}
+
+.highlight-tertiary {
+  background: var(--accent);
+}
+
+/* ========= FEATURES ========= */
+.features-section {
+  margin-bottom: 30rem;
+}
+
+.features-main-heading {
+  text-align: center;
+  font-size: 4.8rem;
+  margin-bottom: 8rem;
+  color: var(--grey-dark);
+}
+
+.features-grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8rem 5rem;
+  align-items: center;
+}
+
+.feature-headings {
+  font-size: 3rem;
+  color: var(--grey-dark);
+  margin-bottom: 1.5rem;
+}
+
+.feature-img {
+  width: 100%;
+  max-width: 40rem;
+  justify-self: center;
+}
+
+/* ========= CTA ========= */
+.cta-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30rem;
+}
+
+.cta-card {
+  background: var(--primary);
+  padding: 8rem 16rem;
+  border-radius: 2rem;
+  text-align: center;
+}
+
+.cta-heading {
+  font-size: 4rem;
+  color: var(--white);
+  margin-bottom: 3rem;
+}
+
+/* ========= FOOTER ========= */
+.footer {
+  text-align: center;
+  padding-bottom: 6rem;
+}
+
+.logo-sm {
+  width: 8rem;
+  margin-bottom: 2rem;
+}
+
+.social-icons-container,
+.footer-links-container {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.social-icons {
+  width: 2.4rem;
+}
+
+.footer-links-container a {
+  text-decoration: none;
+  color: var(--grey);
+}
+
+.small-text {
+  font-size: 1.2rem;
+}
+
+.heart-icon {
+  color: var(--secondary);
+}
+
+/* ========= CHAT ========= */
+.chat-container {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  width: 7rem;
+  height: 7rem;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-icon {
+  width: 4rem;
+}
+
+/* ========= BETA BADGE ========= */
+.beta {
+  position: relative;
+}
+
+.beta::after {
+  content: "beta";
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(60%, -60%);
+  background: var(--accent);
+  color: var(--white);
+  font-size: 1.2rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.4rem;
+}
+
+/* ========= RESPONSIVE ========= */
+@media (max-width: 768px) {
+  .hero-heading {
+    font-size: 4.2rem;
+  }
+
+  .features-grid-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .cta-card {
+    padding: 6rem 3rem;
+  }
+}

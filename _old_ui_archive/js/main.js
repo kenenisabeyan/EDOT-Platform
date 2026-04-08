@@ -98,3 +98,9 @@ document.addEventListener("submit", e => {
     }
   }
 });
+
+const user = JSON.parse(localStorage.getItem("edotUser"));
+
+if (!user || user.loggedIn !== true) {
+  window.location.href = "login.html";
+}
