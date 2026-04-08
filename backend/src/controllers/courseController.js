@@ -4,11 +4,17 @@ export const getCourses = async (req, res) => {
     try {
         const category = req.query.category;
         const search = req.query.search;
-        let query = 'SELECT c.*, u.name as instructor_name FROM courses c JOIN users u ON c.instructor_id = u.id WHERE 1=1';
+        let query = `
+            SELECT c.*, c.category_main as category, u.name as instructor_name, COUNT(e.id) as enrolled_students 
+            FROM courses c 
+            JOIN users u ON c.instructor_id = u.id 
+            LEFT JOIN enrollments e ON c.id = e.course_id 
+            WHERE 1=1
+        `;
         let params = [];
         
         if (category) {
-            query += ' AND c.category = ?';
+            query += ' AND c.category_main = ?';
             params.push(category);
         }
         
@@ -16,6 +22,8 @@ export const getCourses = async (req, res) => {
             query += ' AND (c.title LIKE ? OR c.description LIKE ?)';
             params.push(`%${search}%`, `%${search}%`);
         }
+        
+        query += ' GROUP BY c.id';
         
         const [courses] = await db.query(query, params);
         res.json(courses);

@@ -33,3 +33,22 @@ export const updateProfile = async (req, res) => {
         res.status(500).json({ message: 'Server error updating profile' });
     }
 };
+
+export const getUsers = async (req, res) => {
+    try {
+        const { role } = req.query;
+        let query = 'SELECT id, name, email, role FROM users';
+        let params = [];
+        
+        if (role) {
+            query += ' WHERE role = ?';
+            params.push(role);
+        }
+        
+        const [users] = await db.query(query, params);
+        res.json(users);
+    } catch (error) {
+        console.error('Error fetching users:', error);
+        res.status(500).json({ message: 'Server error fetching users' });
+    }
+};

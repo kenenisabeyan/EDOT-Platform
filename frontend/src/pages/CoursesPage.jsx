@@ -1,24 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
-import { Search, Filter, Star, Clock, User } from 'lucide-react';
+import { Search, Filter, Star, Clock, User, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const CoursesPage = () => {
   const [courses, setCourses] = useState([]);
   const [search, setSearch] = useState('');
   const [category, setCategory] = useState('');
 
-  // Fallback mock data if API is not ready
-  const mockCourses = [
-    { id: 1, title: 'Complete React Developer in 2026', instructor_name: 'Andrei Neagoie', category: 'Programming', duration: '40h 20m', thumbnail: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80', rating: 4.8 },
-    { id: 2, title: 'Advanced Mathematics: Calculus', instructor_name: 'Dr. John Smith', category: 'Math', duration: '25h 00m', thumbnail: 'https://images.unsplash.com/photo-1509228468518-180dd4864904?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80', rating: 4.9 },
-    { id: 3, title: 'Data Science Bootcamp', instructor_name: 'Jose Portilla', category: 'Science', duration: '60h 10m', thumbnail: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80', rating: 4.7 },
-  ];
-
   useEffect(() => {
-    // In a real app we would fetch from the backend API here
-    // Example: axios.get(`/api/courses?search=${search}&category=${category}`)
-    setCourses(mockCourses);
+    const fetchCourses = async () => {
+      try {
+        const response = await axios.get(`http://localhost:5000/api/courses?search=${search}&category=${category}`);
+        setCourses(response.data);
+      } catch (error) {
+        console.error('Error fetching courses:', error);
+      }
+    };
+    
+    // Quick debounce simulation for search
+    const delayDebounceFn = setTimeout(() => {
+      fetchCourses();
+    }, 300);
+
+    return () => clearTimeout(delayDebounceFn);
   }, [search, category]);
 
   return (
@@ -76,8 +82,8 @@ const CoursesPage = () => {
                   alt={course.title} 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur text-secondary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                  {course.category}
+                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur text-secondary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                  {course.category || 'General'}
                 </div>
               </div>
               
@@ -91,8 +97,8 @@ const CoursesPage = () => {
                 
                 <div className="flex items-center gap-4 mt-auto pt-4 border-t border-border">
                   <div className="flex items-center gap-1 text-sm font-medium text-amber-500">
-                    <Star size={16} fill="currentColor" />
-                    <span>{course.rating}</span>
+                    <Users size={16} fill="currentColor" />
+                    <span>{course.enrolled_students || 0} students</span>
                   </div>
                   <div className="flex items-center gap-1 text-sm text-gray-500">
                     <Clock size={16} />

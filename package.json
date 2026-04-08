@@ -1,0 +1,11 @@
+{
+  "name": "edot-platform",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "concurrently \"pnpm -F frontend dev\" \"pnpm -F backend dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

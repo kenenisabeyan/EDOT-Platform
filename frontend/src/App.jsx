@@ -10,6 +10,8 @@ import ContactPage from './pages/ContactPage';
 import PaymentsPage from './pages/PaymentsPage';
 import ProfilePage from './pages/ProfilePage';
 import QuizPage from './pages/QuizPage';
+import AttendancePage from './pages/AttendancePage';
+import ManageSectionsPage from './pages/ManageSectionsPage';
 
 import CourseDetailPage from './pages/CourseDetailPage';
 import LessonPage from './pages/LessonPage';
@@ -33,6 +35,8 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/payments" element={<PaymentsPage />} />
         <Route path="/quiz" element={<QuizPage />} />
+        <Route path="/attendance" element={<AttendancePage />} />
+        <Route path="/manage-sections" element={<ManageSectionsPage />} />
       </Routes>
     </Router>
   );

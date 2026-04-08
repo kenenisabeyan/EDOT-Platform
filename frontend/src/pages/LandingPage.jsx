@@ -56,40 +56,48 @@ const LandingPage = () => {
           </div>
         </section>
 
-        {/* Why Choose Us */}
-        <section className="py-20 bg-background">
+        {/* Why EDOT is Different */}
+        <section className="py-24 bg-gradient-to-b from-white to-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col lg:flex-row items-center gap-16">
-              <div className="lg:w-1/2">
-                <h2 className="text-secondary mb-6">Why learn with EDOT?</h2>
-                <p className="text-gray-600 mb-8 text-lg">
-                  We provide a premium learning experience designed to help you succeed in your educational journey.
-                </p>
+              <div className="lg:w-1/2 space-y-8">
+                <div>
+                  <span className="text-primary font-semibold tracking-wider uppercase text-sm mb-2 block">Our Edge</span>
+                  <h2 className="text-4xl text-secondary mb-4 leading-tight">Why <span className="text-primary">EDOT</span> is Different?</h2>
+                  <p className="text-gray-600 text-lg">
+                    We aren't just another platform. We bridge the gap between traditional learning and modern technology.
+                  </p>
+                </div>
                 
                 <div className="space-y-6">
                   {[
-                    { title: 'Learn at your own pace', desc: 'Enjoy lifetime access to courses on our platform' },
-                    { title: 'World-class instructors', desc: 'Learn from industry experts and passionate educators' },
-                    { title: 'Interactive learning', desc: 'Quizzes, projects, and assignments to test your knowledge' }
+                    { title: 'Section-based learning', desc: 'Join structured cohorts, engage with peers, and learn in dedicated batches.', icon: <Users size={24} className="text-primary" /> },
+                    { title: 'Real attendance tracking', desc: 'Secure, daily status tracking keeps everyone accountable, just like a real classroom.', icon: <CheckCircle size={24} className="text-accent" /> },
+                    { title: 'Hybrid learning (Online + Physical)', desc: 'Seamlessly blend remote digital lessons with physical tracking for a complete experience.', icon: <BookOpen size={24} className="text-indigo-500" /> },
+                    { title: 'Role-based dashboards', desc: 'Custom, tailored experiences whether you are a Student tracking progress, or an Instructor managing sections.', icon: <Star size={24} className="text-amber-500" /> }
                   ].map((feature, idx) => (
-                    <div key={idx} className="flex gap-4">
-                      <div className="mt-1">
-                        <CheckCircle className="text-accent" size={24} />
+                    <div key={idx} className="flex gap-5 p-4 rounded-xl hover:bg-white hover:shadow-md transition-all duration-300 border border-transparent hover:border-border cursor-pointer group">
+                      <div className="flex-shrink-0 mt-1 bg-gray-50 h-12 w-12 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                        {feature.icon}
                       </div>
                       <div>
-                        <h4 className="font-poppins font-semibold text-lg text-secondary">{feature.title}</h4>
-                        <p className="text-gray-600">{feature.desc}</p>
+                        <h4 className="font-poppins font-semibold text-lg text-secondary mb-1">{feature.title}</h4>
+                        <p className="text-gray-600 leading-relaxed text-sm">{feature.desc}</p>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="lg:w-1/2 relative">
-                <div className="bg-gradient-to-br from-primary to-blue-400 rounded-3xl p-8 text-white relative z-10 shadow-xl overflow-hidden aspect-video flex items-center justify-center">
-                    <PlayCircle size={80} className="opacity-90 hover:opacity-100 hover:scale-110 cursor-pointer transition-all duration-300" />
+              <div className="lg:w-1/2 relative group w-full perspective-1000">
+                <div className="bg-gradient-to-br from-primary via-blue-500 to-indigo-600 rounded-[2rem] p-8 text-white relative z-10 shadow-2xl overflow-hidden aspect-square md:aspect-video flex items-center justify-center transform transition-transform duration-700 group-hover:rotate-y-12">
+                    <PlayCircle size={90} className="opacity-90 hover:opacity-100 hover:scale-110 cursor-pointer transition-all duration-300 drop-shadow-xl" strokeWidth={1.5} />
+                    
+                    {/* Decorative elements */}
+                    <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full blur-2xl"></div>
+                    <div className="absolute bottom-10 right-10 w-32 h-32 bg-indigo-900/20 rounded-full blur-3xl"></div>
                 </div>
                 {/* Decorative background shape */}
-                <div className="absolute -bottom-6 -right-6 w-full h-full border-2 border-primary rounded-3xl -z-10"></div>
+                <div className="absolute -bottom-5 -right-5 w-full h-full border-[3px] border-primary/30 rounded-[2rem] -z-10 transition-transform duration-500 group-hover:translate-x-3 group-hover:translate-y-3"></div>
               </div>
             </div>
           </div>

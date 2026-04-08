@@ -28,3 +28,29 @@ export const protect = (req, res, next) => {
         res.status(401).json({ message: 'Not authorized, no token' });
     }
 };
+
+export const verifyToken = protect;
+
+export const isAdmin = (req, res, next) => {
+    if (req.user && req.user.role === 'admin') {
+        next();
+    } else {
+        res.status(403).json({ message: 'Not authorized as an admin' });
+    }
+};
+
+export const isInstructor = (req, res, next) => {
+    if (req.user && req.user.role === 'instructor') {
+        next();
+    } else {
+        res.status(403).json({ message: 'Not authorized as an instructor' });
+    }
+};
+
+export const isInstructorOrAdmin = (req, res, next) => {
+    if (req.user && (req.user.role === 'instructor' || req.user.role === 'admin')) {
+        next();
+    } else {
+        res.status(403).json({ message: 'Not authorized, require instructor or admin role' });
+    }
+};

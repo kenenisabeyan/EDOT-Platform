@@ -36,6 +36,8 @@ const DashboardPage = () => {
                            <div className="pt-4 mt-4 border-t border-border">
                              <p className="px-4 text-xs font-semibold uppercase text-gray-400 mb-2 mt-2">Study Tools</p>
                              <SidebarItem icon={PenTool} label="Quizzes" to="/quiz" />
+                             <SidebarItem icon={User} label="Attendance" to="/attendance" />
+                             <SidebarItem icon={Settings} label="Manage Sections" to="/manage-sections" />
                            </div>
                            <div className="pt-4 mt-4 border-t border-border">
                              <p className="px-4 text-xs font-semibold uppercase text-gray-400 mb-2 mt-2">Account</p>

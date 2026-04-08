@@ -9,6 +9,8 @@ import courseRoutes from './src/routes/courseRoutes.js';
 import userRoutes from './src/routes/userRoutes.js';
 import lessonRoutes from './src/routes/lessonRoutes.js';
 import enrollRoutes from './src/routes/enrollRoutes.js';
+import sectionRoutes from './src/routes/sectionRoutes.js';
+import attendanceRoutes from './src/routes/attendanceRoutes.js';
 
 import initDB from './src/models/initDB.js';
 
@@ -44,6 +46,8 @@ app.use('/api/courses', courseRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/lessons', lessonRoutes);
 app.use('/api/enroll', enrollRoutes);
+app.use('/api/sections', sectionRoutes);
+app.use('/api/attendance', attendanceRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
