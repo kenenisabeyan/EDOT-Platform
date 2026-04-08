@@ -5,6 +5,8 @@ import db from './config/db.js';
 
 // Route Imports
 import authRoutes from './src/routes/authRoutes.js';
+import courseRoutes from './src/routes/courseRoutes.js';
+import userRoutes from './src/routes/userRoutes.js';
 
 dotenv.config();
 
@@ -31,6 +33,8 @@ app.get('/api/health', async (req, res) => {
 
 // Mount Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/courses', courseRoutes);
+app.use('/api/users', userRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

@@ -1,1 +1,31 @@
-/* Base UI styles are handled in /css/base.css and /css/app.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-textColor font-inter antialiased m-0 p-0;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins font-bold;
+  }
+  h1 { font-size: 40px; }
+  h2 { font-size: 32px; }
+  h3 { font-size: 24px; }
+  p { font-size: 16px; }
+  small { font-size: 14px; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-[24px] py-[12px] rounded-button font-inter font-medium hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-1 shadow-md;
+  }
+  .btn-outline {
+    @apply border-2 border-primary text-primary px-[24px] py-[12px] rounded-button font-inter font-medium hover:bg-primary hover:text-white transition-all duration-300;
+  }
+  .card {
+    @apply bg-white border border-borderColor rounded-card shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden;
+  }
+}

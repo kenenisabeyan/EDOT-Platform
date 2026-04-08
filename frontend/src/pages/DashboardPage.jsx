@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import DashboardNavbar from '../components/DashboardNavbar';
 import Sidebar from '../components/Sidebar';
 import '../css/app.css';
@@ -9,13 +10,29 @@ const DashboardPage = () => {
   const navigate = useNavigate();
   const [tasks, setTasks] = useState(['Review React JS', 'Complete Math Assignment']);
   const [newTask, setNewTask] = useState('');
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Protected Route Check
     const token = localStorage.getItem('token');
     if (!token) {
       navigate('/login');
+      return;
     }
+
+    const fetchUser = async () => {
+      try {
+        const res = await axios.get('http://localhost:5000/api/users/me', {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        setUser(res.data);
+      } catch (error) {
+        if (error.response?.status === 401) {
+          localStorage.removeItem('token');
+          navigate('/login');
+        }
+      }
+    };
+    fetchUser();
   }, [navigate]);
 
   const addTask = () => {
@@ -33,7 +50,7 @@ const DashboardPage = () => {
         <Sidebar />
 
         <main className="dashboard-content">
-          <h1>Welcome back, Student 👋</h1>
+          <h1>Welcome back, {user ? user.fullName.split(' ')[0] : 'Student'} 👋</h1>
           <p className="subtitle">Here is your learning progress</p>
 
           <div className="stats-grid">
