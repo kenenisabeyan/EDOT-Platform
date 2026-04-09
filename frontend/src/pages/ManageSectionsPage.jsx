@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import axios from 'axios';
-import PageHeader from '../components/ui/PageHeader';
-import Card, { CardHeader, CardBody } from '../components/ui/Card';
-import Button from '../components/ui/Button';
 
 const ManageSectionsPage = () => {
     const [courses, setCourses] = useState([]);
@@ -124,155 +121,143 @@ const ManageSectionsPage = () => {
     return (
         <div className="min-h-screen flex flex-col bg-background">
             <Navbar />
-            <main className="max-w-7xl mx-auto w-full px-6 py-8 flex-1">
-                <PageHeader title="Manage Sections" subtitle="Create, configure and assign students to groups." />
+            <div className="max-w-5xl mx-auto w-full px-4 py-8 flex-1 space-y-8">
                 
-                <div className="space-y-10">
-                    {/* Section Creation Panel */}
-                    <Card hover={false}>
-                        <CardHeader className="bg-gray-50 border-b border-gray-100 pb-4">
-                            <h2 className="text-xl font-bold text-gray-900">Create New Section</h2>
-                        </CardHeader>
-                        <CardBody>
-                            <form onSubmit={handleCreateSection} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">Select Course *</label>
-                                    <select 
-                                        required
-                                        className="w-full border border-gray-300 rounded-lg p-2.5 focus:ring-blue-600 focus:border-blue-600 bg-white"
-                                        value={selectedCourse}
-                                        onChange={(e) => setSelectedCourse(e.target.value)}
-                                    >
-                                        <option value="">-- Choose a course --</option>
-                                        {courses.map(c => <option key={c.id} value={c.id}>{c.title}</option>)}
-                                    </select>
-                                </div>
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">Section Name (e.g. Batch 1) *</label>
-                                    <input 
-                                        required
-                                        type="text" 
-                                        className="w-full border border-gray-300 rounded-lg p-2.5 focus:ring-blue-600 focus:border-blue-600"
-                                        value={newSectionName}
-                                        onChange={(e) => setNewSectionName(e.target.value)}
-                                    />
-                                </div>
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">Assign Instructor *</label>
-                                    <select 
-                                        required
-                                        className="w-full border border-gray-300 rounded-lg p-2.5 focus:ring-blue-600 focus:border-blue-600 bg-white"
-                                        value={newSectionInstructor}
-                                        onChange={(e) => setNewSectionInstructor(e.target.value)}
-                                    >
-                                        <option value="">-- Assign Instructor --</option>
-                                        {instructors.map(i => <option key={i.id} value={i.id}>{i.name}</option>)}
-                                    </select>
-                                </div>
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">Schedule</label>
-                                    <input 
-                                        type="text" 
-                                        placeholder="E.g., Mon/Wed 10:00 AM"
-                                        className="w-full border border-gray-300 rounded-lg p-2.5 focus:ring-blue-600 focus:border-blue-600"
-                                        value={newSectionSchedule}
-                                        onChange={(e) => setNewSectionSchedule(e.target.value)}
-                                    />
-                                </div>
-                                <div className="md:col-span-2 flex justify-end">
-                                    <Button type="submit" variant="primary" disabled={!selectedCourse}>
-                                        Create Section
-                                    </Button>
-                                </div>
-                            </form>
-                        </CardBody>
-                    </Card>
+                {/* Section Creation Panel */}
+                <div className="bg-white rounded-xl shadow-sm p-6 border border-border">
+                    <h1 className="text-2xl font-semibold text-secondary mb-6">Create New Section</h1>
+                    <form onSubmit={handleCreateSection} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-2">Select Course *</label>
+                            <select 
+                                required
+                                className="w-full border border-gray-300 rounded-lg p-2.5"
+                                value={selectedCourse}
+                                onChange={(e) => setSelectedCourse(e.target.value)}
+                            >
+                                <option value="">-- Choose a course --</option>
+                                {courses.map(c => <option key={c.id} value={c.id}>{c.title}</option>)}
+                            </select>
+                        </div>
+                        <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-2">Section Name (e.g. Batch 1) *</label>
+                            <input 
+                                required
+                                type="text" 
+                                className="w-full border border-gray-300 rounded-lg p-2.5"
+                                value={newSectionName}
+                                onChange={(e) => setNewSectionName(e.target.value)}
+                            />
+                        </div>
+                        <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-2">Assign Instructor *</label>
+                            <select 
+                                required
+                                className="w-full border border-gray-300 rounded-lg p-2.5"
+                                value={newSectionInstructor}
+                                onChange={(e) => setNewSectionInstructor(e.target.value)}
+                            >
+                                <option value="">-- Assign Instructor --</option>
+                                {instructors.map(i => <option key={i.id} value={i.id}>{i.name}</option>)}
+                            </select>
+                        </div>
+                        <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-2">Schedule</label>
+                            <input 
+                                type="text" 
+                                placeholder="E.g., Mon/Wed 10:00 AM"
+                                className="w-full border border-gray-300 rounded-lg p-2.5"
+                                value={newSectionSchedule}
+                                onChange={(e) => setNewSectionSchedule(e.target.value)}
+                            />
+                        </div>
+                        <div className="md:col-span-2 flex justify-end">
+                            <button type="submit" className="btn-primary" disabled={!selectedCourse}>
+                                Create Section
+                            </button>
+                        </div>
+                    </form>
+                </div>
 
-                    {/* Manage Existing Sections Panel */}
-                    {selectedCourse && (
-                        <Card hover={false}>
-                            <CardHeader className="bg-gray-50 border-b border-gray-100 pb-4">
-                                <h2 className="text-xl font-bold text-gray-900">Manage Sections for Selected Course</h2>
-                            </CardHeader>
-                            <CardBody>
-                                {sections.length === 0 ? (
-                                    <div className="text-center py-8 text-gray-500">No sections found for this course.</div>
-                                ) : (
-                                    <div className="space-y-6">
-                                        {sections.map(section => (
-                                            <div key={section.id} className="border border-gray-200 bg-white rounded-lg p-6 shadow-sm">
-                                                <div className="mb-6 pb-4 border-b border-gray-100">
-                                                    <h3 className="text-xl font-bold text-gray-900 mb-2">{section.name}</h3>
-                                                    <div className="flex flex-wrap gap-4 text-sm text-gray-600">
-                                                        <span><span className="font-semibold">Schedule:</span> {section.schedule || 'N/A'}</span>
-                                                        <span><span className="font-semibold">Instructor:</span> {section.instructor_name || 'Unassigned'}</span>
-                                                        <span><span className="font-semibold">Enrolls:</span> {section.student_count || 0}</span>
-                                                    </div>
-                                                </div>
+                {/* Manage Existing Sections Panel */}
+                {selectedCourse && (
+                    <div className="bg-white rounded-xl shadow-sm p-6 border border-border">
+                        <h2 className="text-xl font-semibold text-secondary mb-6">Manage Sections for Selected Course</h2>
+                        {sections.length === 0 ? (
+                            <p className="text-gray-500">No sections found for this course.</p>
+                        ) : (
+                            <div className="space-y-6">
+                                {sections.map(section => (
+                                    <div key={section.id} className="border border-gray-200 rounded-lg p-5">
+                                        <div className="flex justify-between items-start mb-4">
+                                            <div>
+                                                <h3 className="text-lg font-bold text-secondary">{section.name}</h3>
+                                                <p className="text-sm text-gray-500">Schedule: {section.schedule || 'N/A'}</p>
+                                                <p className="text-sm text-gray-500">Instructor: {section.instructor_name || 'Unassigned'}</p>
+                                                <p className="text-sm text-gray-500">Enrolled Students: {section.student_count || 0}</p>
+                                            </div>
+                                        </div>
 
-                                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                                                    {/* Assign New Instructor */}
-                                                    <div>
-                                                        <h4 className="text-sm font-bold text-gray-900 mb-3 uppercase tracking-wider">Re-assign Instructor</h4>
-                                                        <div className="flex gap-3">
-                                                            <select 
-                                                                className="flex-1 border border-gray-300 rounded-lg p-2.5 text-sm bg-white focus:ring-blue-600 focus:border-blue-600"
-                                                                value={selectedSectionId === section.id ? assignInstructorId : ''}
-                                                                onChange={(e) => {
-                                                                    setSelectedSectionId(section.id);
-                                                                    setAssignInstructorId(e.target.value);
-                                                                }}
-                                                            >
-                                                                <option value="">-- Choose Instructor --</option>
-                                                                {instructors.map(i => <option key={i.id} value={i.id}>{i.name}</option>)}
-                                                            </select>
-                                                            <Button 
-                                                                variant="outline"
-                                                                className="px-6 whitespace-nowrap"
-                                                                onClick={() => handleAssignInstructor(section.id)}
-                                                            >
-                                                                Assign
-                                                            </Button>
-                                                        </div>
-                                                    </div>
-
-                                                    {/* Add Students Multi-Select */}
-                                                    <div>
-                                                        <h4 className="text-sm font-bold text-gray-900 mb-3 uppercase tracking-wider">Enroll Students</h4>
-                                                        <div className="border border-gray-300 rounded-lg p-4 max-h-48 overflow-y-auto mb-4 bg-gray-50 shadow-inner grid grid-cols-1 sm:grid-cols-2 gap-2">
-                                                            {students.map(student => (
-                                                                <label key={student.id} className="flex items-center gap-2 text-sm cursor-pointer hover:bg-gray-100 p-1.5 rounded transition-colors border border-transparent hover:border-gray-200">
-                                                                    <input 
-                                                                        type="checkbox" 
-                                                                        className="w-4 h-4 text-blue-600 focus:ring-blue-600 rounded border-gray-300"
-                                                                        checked={selectedSectionId === section.id && selectedStudentIds.includes(student.id)}
-                                                                        onChange={() => {
-                                                                            setSelectedSectionId(section.id);
-                                                                            toggleStudentSelection(student.id);
-                                                                        }}
-                                                                    />
-                                                                    <span className="truncate">{student.name}</span>
-                                                                </label>
-                                                            ))}
-                                                        </div>
-                                                        <Button 
-                                                            variant="primary"
-                                                            className="w-full"
-                                                            onClick={() => handleAddStudents(section.id)}
-                                                        >
-                                                            Enroll Selected Students
-                                                        </Button>
-                                                    </div>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4 border-t border-gray-200">
+                                            {/* Assign New Instructor */}
+                                            <div>
+                                                <h4 className="text-sm font-semibold mb-2">Re-assign Instructor</h4>
+                                                <div className="flex gap-2">
+                                                    <select 
+                                                        className="w-full border border-gray-300 rounded-lg p-2 text-sm"
+                                                        value={selectedSectionId === section.id ? assignInstructorId : ''}
+                                                        onChange={(e) => {
+                                                            setSelectedSectionId(section.id);
+                                                            setAssignInstructorId(e.target.value);
+                                                        }}
+                                                    >
+                                                        <option value="">-- Choose --</option>
+                                                        {instructors.map(i => <option key={i.id} value={i.id}>{i.name}</option>)}
+                                                    </select>
+                                                    <button 
+                                                        className="btn-primary text-xs w-24 py-1"
+                                                        onClick={() => handleAssignInstructor(section.id)}
+                                                    >
+                                                        Assign
+                                                    </button>
                                                 </div>
                                             </div>
-                                        ))}
+
+                                            {/* Add Students Multi-Select */}
+                                            <div>
+                                                <h4 className="text-sm font-semibold mb-2">Add Students</h4>
+                                                <div className="border border-gray-300 rounded-lg p-3 max-h-40 overflow-y-auto mb-2 bg-gray-50">
+                                                    {students.map(student => (
+                                                        <label key={student.id} className="flex items-center gap-2 mb-2 text-sm cursor-pointer">
+                                                            <input 
+                                                                type="checkbox" 
+                                                                className="text-primary focus:ring-primary rounded"
+                                                                checked={selectedSectionId === section.id && selectedStudentIds.includes(student.id)}
+                                                                onChange={() => {
+                                                                    setSelectedSectionId(section.id);
+                                                                    toggleStudentSelection(student.id);
+                                                                }}
+                                                            />
+                                                            {student.name}
+                                                        </label>
+                                                    ))}
+                                                </div>
+                                                <button 
+                                                    className="btn-primary text-sm w-full py-2"
+                                                    onClick={() => handleAddStudents(section.id)}
+                                                >
+                                                    Add Selected Students
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
-                                )}
-                            </CardBody>
-                        </Card>
-                    )}
-                </div>
-            </main>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                )}
+
+            </div>
         </div>
     );
 };
